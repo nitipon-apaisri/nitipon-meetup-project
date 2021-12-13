@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
 import { eventsDB } from "../../db/events";
-
 const MostRatedEvents = () => {
     return (
         <ul>
             {eventsDB
-                .sort((a, b) => (a.rate > b.rate ? 1 : -1))
+                .sort((a, b) => (a.rate < b.rate ? 1 : -1))
                 .slice(0, 3)
                 .map((event, index) => {
-                    return <li key={index}>{event.title}</li>;
+                    return (
+                        <li key={index}>
+                            <a href={`/event/${event.id}`}>{event.title}</a>
+                        </li>
+                    );
                 })}
         </ul>
     );

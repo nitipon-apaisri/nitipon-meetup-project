@@ -10,6 +10,6 @@ describe("Overview", () => {
     it("2nd evnet of the list", () => {
         render(<UpcomingEvents />);
         const items = screen.getAllByRole("listitem");
-        expect(items[1]).toContainHTML("<li>Blockchain Hackaton</li>");
+        expect(items[1]).toContainHTML(`${items[1].title}`);
     });
 });

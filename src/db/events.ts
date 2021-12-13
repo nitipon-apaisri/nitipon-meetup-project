@@ -27,7 +27,7 @@ export const eventsDB: eventModel[]= [
         joined:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
         interested:["xC11","xC12"],
         location: "London",
-        rate: 2,
+        rate: 2.5,
         date: "2021/07/08"
     },
     {
