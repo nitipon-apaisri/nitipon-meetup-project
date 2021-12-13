@@ -1,4 +1,5 @@
 import MostInterestedEvents from "../../componets/MostInterestedEvents/MostInterestedEvents";
+import MostRatedEvents from "../../componets/MostRatedEvents/MostRatedEvents";
 import UpcomingEvents from "../../componets/UpcomingEvents/UpcomingEvents";
 const Overview = () => {
     return (
@@ -8,6 +9,7 @@ const Overview = () => {
                 <div className="most-interested">
                     <MostInterestedEvents />
                     <UpcomingEvents />
+                    <MostRatedEvents />
                 </div>
             </div>
         </div>
