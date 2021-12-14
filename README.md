@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Overview:
 
--   As a user, I would like to see the most top 3 interest events by other users.
--   As a user, I would like to see the first 3 upcoming events.
--   As a user, I would like to see the most top 3 rated events.
+-   As a user, I would like to see the most top 3 interested events by other people, that helps me to know what other people are in.
+-   As a user, I would like to see the first 3 upcoming events, that helps me to join the most nearest event if I have time.
+-   As a user, I would like to see the most top 3 rated events, that helps me to join the event next time when it's open again.
 
 ### Event page:
 

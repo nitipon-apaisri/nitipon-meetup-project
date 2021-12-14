@@ -9,6 +9,12 @@ const EventPage = () => {
     return (
         <div className="event-container">
             <h1>{eventsDB[eventIndex].title}</h1>
+            <div className="information">
+                <div className="description">
+                    <h4>Information</h4>
+                    <p data-testid="description">{eventsDB[eventIndex].description}</p>
+                </div>
+            </div>
         </div>
     );
 };
