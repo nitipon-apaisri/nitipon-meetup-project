@@ -7,7 +7,7 @@ const MostRatedEvents = () => {
                 .slice(0, 3)
                 .map((event, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} data-testid={`event-${index}`}>
                             <a href={`/event/${event.id}`}>{event.title}</a>
                         </li>
                     );

@@ -7,7 +7,11 @@ const MostInterestedEvents = () => {
                 .sort((a, b) => (a.joined.length < b.joined.length ? 1 : -1))
                 .slice(0, 3)
                 .map((event, index) => {
-                    return <li key={index}>{event.title}</li>;
+                    return (
+                        <li key={index} data-testid={`event-${index}`}>
+                            <a href={`/event/${event.id}`}>{event.title}</a>
+                        </li>
+                    );
                 })}
         </ul>
     );

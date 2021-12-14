@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { eventsDB } from "../../db/events";
 import UpcomingEvents from "./UpcomingEvents";
 
 describe("Overview", () => {
@@ -7,9 +8,9 @@ describe("Overview", () => {
         const items = screen.getAllByRole("listitem");
         expect(items).toHaveLength(3);
     });
-    it("2nd evnet of the list", () => {
+    it("2nd event", () => {
         render(<UpcomingEvents />);
-        const items = screen.getAllByRole("listitem");
-        expect(items[1]).toContainHTML(`${items[1].title}`);
+        const event = screen.getByTestId("event-0");
+        expect(event).toHaveTextContent(`${eventsDB[0].title}`);
     });
 });
