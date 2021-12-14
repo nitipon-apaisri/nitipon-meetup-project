@@ -6,6 +6,7 @@ export interface eventModel {
     interested: string[],
     location: string,
     rate: number,
+    feedback: string[],
     date: string
 }
 
@@ -18,6 +19,7 @@ export const eventsDB: eventModel[]= [
         interested:["xC11","xC12", "xC13"],
         location: "London",
         rate: 5,
+        feedback: ["Nice","Nice","Nice","Nice","Nice",],
         date: "2021/07/06"
     },
     {
@@ -28,6 +30,7 @@ export const eventsDB: eventModel[]= [
         interested:["xC11","xC12"],
         location: "London",
         rate: 2.5,
+        feedback: ["Nice","Nice","Nice",],
         date: "2021/07/08"
     },
     {
@@ -38,6 +41,7 @@ export const eventsDB: eventModel[]= [
         interested:["xC11"],
         location: "London",
         rate: 5,
+        feedback: ["Nice","Nice","Nice","Nice",],
         date: "2021/07/08"
     }
 ]
