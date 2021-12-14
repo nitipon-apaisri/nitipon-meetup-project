@@ -33,6 +33,16 @@ const EventPage = () => {
                     </ul>
                 </div>
             </div>
+            <div className="date-and-location">
+                <div className="date">
+                    <h4>Date</h4>
+                    <p data-testid="date">{eventsDB[eventIndex].date}</p>
+                </div>
+                <div className="location">
+                    <h4>Location</h4>
+                    <p data-testid="location">{eventsDB[eventIndex].location}</p>
+                </div>
+            </div>
         </div>
     );
 };

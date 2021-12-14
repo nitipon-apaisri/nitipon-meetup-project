@@ -23,4 +23,16 @@ describe("Event page", () => {
         const feedbackLength = eventsDB[0].feedback.length;
         expect(items).toHaveLength(feedbackLength);
     });
+    it("Render event location", async () => {
+        renderWithPath("/event/1", <EventPage />, "/event/:id");
+        const location = screen.getByTestId("location");
+        const localtionName = eventsDB[0].location;
+        expect(location).toHaveTextContent(localtionName);
+    });
+    it("Render event date", async () => {
+        renderWithPath("/event/1", <EventPage />, "/event/:id");
+        const date = screen.getByTestId("date");
+        const dateData = eventsDB[0].date;
+        expect(date).toHaveTextContent(dateData);
+    });
 });
