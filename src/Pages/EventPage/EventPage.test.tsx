@@ -26,7 +26,7 @@ describe("Event page", () => {
     it("Render event location", async () => {
         renderWithPath("/event/1", <EventPage />, "/event/:id");
         const location = screen.getByTestId("location");
-        const localtionName = eventsDB[0].location;
+        const localtionName = eventsDB[0].location.city;
         expect(location).toHaveTextContent(localtionName);
     });
     it("Render event date", async () => {

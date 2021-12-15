@@ -4,10 +4,17 @@ export interface eventModel {
     description: string,
     joined: String[],
     interested: string[],
-    location: string,
+    location: Address,
     rate: number,
     feedback: string[],
     date: string
+}
+
+interface Address {
+    street: string,
+    city: string,
+    country: string,
+    time: string
 }
 
 export const eventsDB: eventModel[]= [
@@ -17,7 +24,12 @@ export const eventsDB: eventModel[]= [
         description: "Javascript is all", 
         joined:["xC10","xC40", "xC41", "xC42",],
         interested:["xC11","xC12", "xC13"],
-        location: "London",
+        location: {
+            street: "Kujoji",
+            city: "Tokyo",
+            country: "Japan",
+            time: "13:00"
+        },
         rate: 5,
         feedback: ["Nice","Nice","Nice","Nice","Nice",],
         date: "2021/07/06"
@@ -28,7 +40,12 @@ export const eventsDB: eventModel[]= [
         description: "Into the Block", 
         joined:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
         interested:["xC11","xC12"],
-        location: "London",
+        location: {
+            street: "Kujoji",
+            city: "Tokyo",
+            country: "Japan",
+            time: "13:00"
+        },
         rate: 2.5,
         feedback: ["Nice","Nice","Nice",],
         date: "2021/07/08"
@@ -39,7 +56,12 @@ export const eventsDB: eventModel[]= [
         description: "Nippon", 
         joined:["xC10"],
         interested:["xC11"],
-        location: "London",
+        location: {
+            street: "Kujoji",
+            city: "Tokyo",
+            country: "Japan",
+            time: "13:00"
+        },
         rate: 5,
         feedback: ["Nice","Nice","Nice","Nice",],
         date: "2021/07/08"

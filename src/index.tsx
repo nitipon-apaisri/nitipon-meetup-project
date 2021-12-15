@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import Main from "./App";
-import EventPage from "./Views/EventPage/EventPage";
+import EventPage from "./Pages/EventPage/EventPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 

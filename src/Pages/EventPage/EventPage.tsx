@@ -40,7 +40,7 @@ const EventPage = () => {
                 </div>
                 <div className="location">
                     <h4>Location</h4>
-                    <p data-testid="location">{eventsDB[eventIndex].location}</p>
+                    <p data-testid="location">{eventsDB[eventIndex].location.city}</p>
                 </div>
             </div>
         </div>

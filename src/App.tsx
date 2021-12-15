@@ -1,8 +1,8 @@
-import Overview from "./Views/Overview/Overview";
+import Home from "./Pages/Home/Home";
 function App() {
     return (
         <div className="App">
-            <Overview />
+            <Home />
         </div>
     );
 }
