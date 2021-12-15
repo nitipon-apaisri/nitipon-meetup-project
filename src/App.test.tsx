@@ -7,6 +7,6 @@ describe("App", () => {
     it("Total items", () => {
         renderWithRouter(<Home />);
         const items = screen.getAllByRole("listitem");
-        expect(items).toHaveLength(9);
+        expect(items).toHaveLength(12);
     });
 });

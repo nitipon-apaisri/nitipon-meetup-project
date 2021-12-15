@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import "./hero";
+//prettier-ignore
+h1,
+    h2, h3, h4, h5, h6, p, a {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #f3f3f3;
+}
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    nav {
+        padding: 20px 40px;
+        .routes {
+            display: flex;
+            align-items: center;
+            .banner {
+                width: 40px;
+                height: 40px;
+                background-color: grey;
+                border-radius: 8px;
+            }
+            ul {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                li {
+                    padding: 16px;
+                    list-style: none;
+                    a {
+                        letter-spacing: 0.075rem;
+                        text-transform: uppercase;
+                        font-weight: bolder;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .contents-container {
+        padding: 0 40px;
+        margin: auto;
+        .home-hr {
+            width: 640px;
+            margin: 24px auto;
+        }
+    }
+}

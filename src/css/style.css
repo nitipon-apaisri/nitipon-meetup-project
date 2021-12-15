@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+.hero-container {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-container .description {
+  max-width: 560px;
+  letter-spacing: 0.025rem;
+}
+.hero-container .description h1 {
+  font-size: 3rem;
+  margin-top: 50px;
+}
+.hero-container .description p {
+  margin-top: 32px;
+  font-weight: 400;
+  color: #bcbcbc;
+}
+.hero-container img {
+  width: 720px;
+  height: 480px;
+}
+
+h1,
+h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #f3f3f3;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+body nav {
+  padding: 20px 40px;
+}
+body nav .routes {
+  display: flex;
+  align-items: center;
+}
+body nav .routes .banner {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 8px;
+}
+body nav .routes ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+body nav .routes ul li {
+  padding: 16px;
+  list-style: none;
+}
+body nav .routes ul li a {
+  letter-spacing: 0.075rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+}
+body .contents-container {
+  padding: 0 40px;
+  margin: auto;
+}
+body .contents-container .home-hr {
+  width: 640px;
+  margin: 24px auto;
+}
+
+/*# sourceMappingURL=style.css.map */

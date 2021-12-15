@@ -1,0 +1,22 @@
+.hero-container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    .description {
+        max-width: 560px;
+        letter-spacing: 0.025rem;
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
+        }
+        p {
+            margin-top: 32px;
+            font-weight: 400;
+            color: #bcbcbc;
+        }
+    }
+    img {
+        width: 720px;
+        height: 480px;
+    }
+}
