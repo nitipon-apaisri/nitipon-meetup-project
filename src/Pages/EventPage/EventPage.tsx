@@ -36,7 +36,7 @@ const EventPage = () => {
             <div className="date-and-location">
                 <div className="date">
                     <h4>Date</h4>
-                    <p data-testid="date">{eventsDB[eventIndex].date}</p>
+                    <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
                 </div>
                 <div className="location">
                     <h4>Location</h4>

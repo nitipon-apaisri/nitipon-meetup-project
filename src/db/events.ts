@@ -7,14 +7,17 @@ export interface eventModel {
     location: Address,
     rate: number,
     feedback: string[],
-    date: string
+    date: DateNTime
 }
 
+interface DateNTime {
+    dateInfo: string,
+    time: string
+}
 interface Address {
     street: string,
     city: string,
-    country: string,
-    time: string
+    country: string
 }
 
 export const eventsDB: eventModel[]= [
@@ -28,11 +31,13 @@ export const eventsDB: eventModel[]= [
             street: "Kujoji",
             city: "Tokyo",
             country: "Japan",
-            time: "13:00"
         },
         rate: 5,
         feedback: ["Nice","Nice","Nice","Nice","Nice",],
-        date: "2021/07/06"
+        date: {
+            dateInfo:"2021/07/06",
+            time: "13:00"
+        }
     },
     {
         id:'2', 
@@ -44,11 +49,13 @@ export const eventsDB: eventModel[]= [
             street: "Kujoji",
             city: "Tokyo",
             country: "Japan",
-            time: "13:00"
         },
         rate: 2.5,
         feedback: ["Nice","Nice","Nice",],
-        date: "2021/07/08"
+        date: {
+            dateInfo:"2021/07/08",
+            time: "13:00"
+        }
     },
     {
         id:'3', 
@@ -60,10 +67,12 @@ export const eventsDB: eventModel[]= [
             street: "Kujoji",
             city: "Tokyo",
             country: "Japan",
-            time: "13:00"
         },
         rate: 5,
         feedback: ["Nice","Nice","Nice","Nice",],
-        date: "2021/07/08"
+        date: {
+            dateInfo:"2021/07/10",
+            time: "13:00"
+        }
     }
 ]

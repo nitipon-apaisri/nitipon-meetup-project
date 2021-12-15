@@ -32,7 +32,7 @@ describe("Event page", () => {
     it("Render event date", async () => {
         renderWithPath("/event/1", <EventPage />, "/event/:id");
         const date = screen.getByTestId("date");
-        const dateData = eventsDB[0].date;
+        const dateData = eventsDB[0].date.dateInfo;
         expect(date).toHaveTextContent(dateData);
     });
 });

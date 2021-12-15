@@ -22,8 +22,77 @@
   height: 480px;
 }
 
-h1,
-h2, h3, h4, h5, h6, p, a {
+.card {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(230, 230, 230, 0.25);
+  border-radius: 24px;
+}
+
+.card-gallery, .medium-info, .full-pic {
+  width: 432px;
+  max-width: 432px;
+  height: 240px;
+  max-height: 240px;
+}
+.card-gallery p, .medium-info p, .full-pic p {
+  color: #a9a9a9;
+}
+
+.full-pic {
+  position: relative;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.full-pic .short-info {
+  position: absolute;
+  background-color: white;
+  bottom: 16px;
+  width: 400px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 16px;
+}
+.full-pic .short-info .row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.full-pic .short-info .row-1 h4 {
+  color: #000000;
+}
+.full-pic .short-info .row-2 {
+  margin-top: 4px;
+}
+.full-pic .short-info .row-2 p {
+  font-size: 0.75rem;
+}
+
+.medium-info {
+  padding: 24px;
+  border: 1px solid #eaeaea;
+}
+.medium-info .row-1 {
+  display: flex;
+}
+.medium-info .row-1 .card-img {
+  width: 80px;
+  height: 80px;
+  background-color: grey;
+  border-radius: 8px;
+}
+.medium-info .row-1 h4 {
+  color: #000000;
+}
+.medium-info .row-2 {
+  margin-top: 4px;
+}
+.medium-info .row-2 p {
+  font-size: 0.75rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
   margin: 0;
   font-family: "Rubik", sans-serif;
 }
@@ -73,6 +142,14 @@ body .contents-container {
 body .contents-container .home-hr {
   width: 640px;
   margin: 24px auto;
+}
+body .contents-container .title {
+  text-transform: uppercase;
+}
+body .contents-container .gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */
