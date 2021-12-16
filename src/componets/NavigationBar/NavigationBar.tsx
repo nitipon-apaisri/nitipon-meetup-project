@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const NavigationBar = () => {
+    const navigate = useNavigate();
+    const toUserAuth = () => {
+        navigate("/auth");
+    };
     return (
         <nav>
             <div className="routes">
@@ -22,7 +28,7 @@ const NavigationBar = () => {
                     </button>
                 </div>
                 <div className="signIn">
-                    <button>
+                    <button onClick={toUserAuth}>
                         <p>Sign In</p>
                     </button>
                 </div>

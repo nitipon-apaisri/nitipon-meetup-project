@@ -4,6 +4,7 @@ import Main from "./App";
 import EventPage from "./Pages/EventPage/EventPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import UserAuth from "./Pages/UserAuth/UserAuth";
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/event/:id" element={<EventPage />} />
+                <Route path="/auth" element={<UserAuth />} />
             </Routes>
         </Router>
     );

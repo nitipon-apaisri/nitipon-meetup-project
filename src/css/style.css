@@ -28,6 +28,11 @@
   border-radius: 24px;
 }
 
+.card:hover {
+  box-shadow: 0px 4px 40px rgba(221, 221, 221, 0.5);
+  transition-duration: 300ms;
+}
+
 .card-gallery, .medium-info, .full-pic {
   width: 432px;
   max-width: 432px;
@@ -70,6 +75,10 @@
 }
 .full-pic .short-info .row-2 p {
   font-size: 0.75rem;
+}
+
+.full-pic:hover {
+  box-shadow: 0px 4px 40px rgba(128, 128, 128, 0.5);
 }
 
 .medium-info {
@@ -158,7 +167,9 @@ body nav .routes {
 body nav .routes .banner {
   width: 40px;
   height: 40px;
-  background-color: grey;
+  background-image: url("../assets/img/logo.png");
+  background-position: center;
+  background-size: contain;
   border-radius: 8px;
 }
 body nav .routes ul {
@@ -171,6 +182,7 @@ body nav .routes ul li {
   list-style: none;
 }
 body nav .routes ul li a {
+  color: black;
   letter-spacing: 0.075rem;
   text-transform: uppercase;
   font-weight: bolder;

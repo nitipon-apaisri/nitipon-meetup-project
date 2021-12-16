@@ -3,6 +3,10 @@
     box-shadow: (0px 4px 20px rgba(230, 230, 230, 0.25));
     border-radius: 24px;
 }
+.card:hover {
+    box-shadow: (0px 4px 40px rgba(221, 221, 221, 0.5));
+    transition-duration: 300ms;
+}
 .card-gallery {
     width: 432px;
     max-width: 432px;
@@ -45,6 +49,9 @@
             }
         }
     }
+}
+.full-pic:hover {
+    box-shadow: (0px 4px 40px rgba(128, 128, 128, 0.5));
 }
 .medium-info {
     @extend .card-gallery;
