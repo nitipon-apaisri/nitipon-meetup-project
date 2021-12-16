@@ -15,12 +15,15 @@ const MostInterestedEvents = () => {
                             <a
                                 href={`/event/${event.id}`}
                                 data-testid={`event-${index}`}
-                                className="card full-pic"
+                                className="card-cover "
                                 key={index}
-                                style={{
-                                    backgroundImage: `url(${event.imgCover})`,
-                                }}
                             >
+                                <div
+                                    className="card full-pic"
+                                    style={{
+                                        backgroundImage: `url(${event.imgCover})`,
+                                    }}
+                                ></div>
                                 <div className="short-info">
                                     <div className="row-1">
                                         <h4>{event.title}</h4>
