@@ -17,6 +17,9 @@ const MostInterestedEvents = () => {
                                 data-testid={`event-${index}`}
                                 className="card full-pic"
                                 key={index}
+                                style={{
+                                    backgroundImage: `url(${event.imgCover})`,
+                                }}
                             >
                                 <div className="short-info">
                                     <div className="row-1">

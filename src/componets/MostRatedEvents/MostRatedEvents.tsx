@@ -18,10 +18,15 @@ const MostRatedEvents = () => {
                                 key={index}
                             >
                                 <div className="row-1">
-                                    <div className="card-img"></div>
+                                    <div
+                                        className="card-img"
+                                        style={{
+                                            backgroundImage: `url(${event.imgCover})`,
+                                        }}
+                                    ></div>
                                     <div className="title-n-joined">
                                         <h4>{event.title}</h4>
-                                        <p>{`Joined: ${event.joined.length}`}</p>
+                                        <p>{`Rate: ${event.rate}`}</p>
                                     </div>
                                 </div>
                                 <hr />

@@ -15,10 +15,11 @@
 }
 .full-pic {
     position: relative;
-    background-color: grey;
     display: flex;
     justify-content: center;
     text-decoration: none;
+    background-position: center;
+    background-size: contain;
     @extend .card-gallery;
     .short-info {
         position: absolute;
@@ -57,7 +58,8 @@
         .card-img {
             width: 80px;
             height: 80px;
-            background-color: grey;
+            background-size: cover;
+            background-position: center;
             border-radius: 8px;
         }
         .title-n-joined {

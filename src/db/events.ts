@@ -7,6 +7,7 @@ export interface eventModel {
     location: Address,
     rate: number,
     feedback: string[],
+    imgCover: string
     date: DateNTime
 }
 
@@ -37,7 +38,8 @@ export const eventsDB: eventModel[]= [
         date: {
             dateInfo:"2021/07/06",
             time: "13:00"
-        }
+        },
+        imgCover: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1828&q=80"
     },
     {
         id:'2', 
@@ -55,7 +57,8 @@ export const eventsDB: eventModel[]= [
         date: {
             dateInfo:"2021/07/08",
             time: "13:00"
-        }
+        },
+        imgCover: "https://images.unsplash.com/photo-1638913970675-b5ec36292665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
     },
     {
         id:'3', 
@@ -73,6 +76,7 @@ export const eventsDB: eventModel[]= [
         date: {
             dateInfo:"2021/07/10",
             time: "13:00"
-        }
+        },
+        imgCover: "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
     }
 ]

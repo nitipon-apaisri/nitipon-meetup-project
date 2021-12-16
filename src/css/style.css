@@ -41,10 +41,11 @@
 
 .full-pic {
   position: relative;
-  background-color: grey;
   display: flex;
   justify-content: center;
   text-decoration: none;
+  background-position: center;
+  background-size: contain;
 }
 .full-pic .short-info {
   position: absolute;
@@ -84,7 +85,8 @@
 .medium-info .row-1 .card-img {
   width: 80px;
   height: 80px;
-  background-color: grey;
+  background-size: cover;
+  background-position: center;
   border-radius: 8px;
 }
 .medium-info .row-1 .title-n-joined {
