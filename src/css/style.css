@@ -47,6 +47,7 @@
 .card-cover {
   overflow: hidden;
   position: relative;
+  border-radius: 24px;
 }
 
 .full-pic {
