@@ -1,0 +1,15 @@
+.how-to-banner {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 240px;
+    text-align: center;
+    background-color: #ffa5a5;
+    border-radius: 24px;
+    p {
+        margin: 16px 0;
+        width: 586px;
+    }
+}

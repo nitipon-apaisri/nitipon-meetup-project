@@ -112,6 +112,22 @@
   font-size: 0.75rem;
 }
 
+.how-to-banner {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 240px;
+  text-align: center;
+  background-color: #ffa5a5;
+  border-radius: 24px;
+}
+.how-to-banner p {
+  margin: 16px 0;
+  width: 586px;
+}
+
 h1, h2, h3, h4, h5, h6, p, a {
   margin: 0;
   font-family: "Rubik", sans-serif;
@@ -129,6 +145,9 @@ body {
 }
 body nav {
   padding: 20px 40px;
+  border-bottom: 2px solid #f3f3f3;
+  display: flex;
+  justify-content: space-between;
 }
 body nav .routes {
   display: flex;
@@ -154,6 +173,53 @@ body nav .routes ul li a {
   text-transform: uppercase;
   font-weight: bolder;
   text-decoration: none;
+}
+body nav .user-actions {
+  display: flex;
+}
+body nav .user-actions .signUp button,
+body nav .user-actions .signIn button {
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 0 8px;
+  border: 2px solid #eb445d;
+  cursor: pointer;
+}
+body nav .user-actions .signUp button p,
+body nav .user-actions .signIn button p {
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+body nav .user-actions .signIn button {
+  background-color: #eb445d;
+  margin-right: 0;
+}
+body nav .user-actions .signIn button p {
+  color: #ffffff;
+}
+body nav .user-actions .signUp button {
+  background-color: #ffffff;
+  margin-right: 0;
+}
+body nav .user-actions .signUp button p {
+  color: #eb445d;
+}
+body nav .user-actions .signIn:hover button {
+  background-color: #ffffff;
+  margin-right: 0;
+  transition-duration: 300ms;
+}
+body nav .user-actions .signIn:hover button p {
+  color: #eb445d;
+}
+body nav .user-actions .signUp:hover button {
+  background-color: #eb445d;
+  margin-right: 0;
+  transition-duration: 300ms;
+}
+body nav .user-actions .signUp:hover button p {
+  color: #ffffff;
 }
 body .contents-container {
   padding: 0 40px;

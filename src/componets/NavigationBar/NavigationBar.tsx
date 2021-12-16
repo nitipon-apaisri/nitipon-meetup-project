@@ -15,6 +15,18 @@ const NavigationBar = () => {
                     </li>
                 </ul>
             </div>
+            <div className="user-actions">
+                <div className="signUp">
+                    <button>
+                        <p>Sign Up</p>
+                    </button>
+                </div>
+                <div className="signIn">
+                    <button>
+                        <p>Sign In</p>
+                    </button>
+                </div>
+            </div>
         </nav>
     );
 };
