@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { eventsDB } from "../../db/events";
 const MostRatedEvents = () => {
     return (
@@ -11,8 +12,8 @@ const MostRatedEvents = () => {
                     .slice(0, 3)
                     .map((event, index) => {
                         return (
-                            <a
-                                href={`/event/${event.id}`}
+                            <Link
+                                to={`/event/${event.id}`}
                                 data-testid={`event-${index}`}
                                 className="card medium-info"
                                 key={index}
@@ -38,7 +39,7 @@ const MostRatedEvents = () => {
                                         <p>{event.description}</p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         );
                     })}
             </div>

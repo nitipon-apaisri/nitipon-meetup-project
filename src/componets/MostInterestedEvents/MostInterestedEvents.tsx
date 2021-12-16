@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { eventsDB } from "../../db/events";
-
 const MostInterestedEvents = () => {
     return (
         <div className="most-popular-container">
@@ -12,8 +12,8 @@ const MostInterestedEvents = () => {
                     .slice(0, 3)
                     .map((event, index) => {
                         return (
-                            <a
-                                href={`/event/${event.id}`}
+                            <Link
+                                to={`/event/${event.id}`}
                                 data-testid={`event-${index}`}
                                 className="card-cover "
                                 key={index}
@@ -33,7 +33,7 @@ const MostInterestedEvents = () => {
                                         <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         );
                     })}
             </div>

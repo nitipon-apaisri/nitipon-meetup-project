@@ -8,6 +8,9 @@ const Hero = () => {
                     Join a group to meet people, make friends, find support, grow a business, and explore your
                     interests. Thousands of events are happening every day, both online and in person!
                 </p>
+                <p>
+                    <i>{`Source and Inspiration: https://www.meetup.com/`}</i>
+                </p>
             </div>
 
             <img src={heroImg} alt="hero-img" />

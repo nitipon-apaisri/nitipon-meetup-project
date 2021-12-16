@@ -24,7 +24,7 @@ interface Address {
 export const eventsDB: eventModel[]= [
     {
         id:'1', 
-        title: 'Javascript Hackaton', 
+        title: 'Javascript Hackathon', 
         description: "Javascript is all", 
         joined:["xC10","xC40", "xC41", "xC42",],
         interested:["xC11","xC12", "xC13"],
@@ -43,7 +43,7 @@ export const eventsDB: eventModel[]= [
     },
     {
         id:'2', 
-        title: 'Blockchain Hackaton', 
+        title: 'Blockchain Hackathon', 
         description: "Into the Block", 
         joined:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
         interested:["xC11","xC12"],

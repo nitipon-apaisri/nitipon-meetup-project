@@ -1,5 +1,6 @@
 import { eventsDB } from "../../db/events";
-
+// import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 const UpcomingEvents = () => {
     return (
         <div className="upcoming-container">
@@ -13,8 +14,8 @@ const UpcomingEvents = () => {
                     .slice(0, 3)
                     .map((event, index) => {
                         return (
-                            <a
-                                href={`/event/${event.id}`}
+                            <Link
+                                to={`/event/${event.id}`}
                                 data-testid={`event-${index}`}
                                 className="card medium-info"
                                 key={index}
@@ -40,7 +41,7 @@ const UpcomingEvents = () => {
                                         <p>{event.description}</p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         );
                     })}
             </div>

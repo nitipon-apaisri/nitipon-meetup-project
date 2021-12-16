@@ -5,6 +5,9 @@ const NavigationBar = () => {
     const toUserAuth = () => {
         navigate("/auth");
     };
+    const toRegister = () => {
+        navigate("/register");
+    };
     return (
         <nav>
             <div className="routes">
@@ -23,7 +26,7 @@ const NavigationBar = () => {
             </div>
             <div className="user-actions">
                 <div className="signUp">
-                    <button>
+                    <button onClick={toRegister}>
                         <p>Sign Up</p>
                     </button>
                 </div>
