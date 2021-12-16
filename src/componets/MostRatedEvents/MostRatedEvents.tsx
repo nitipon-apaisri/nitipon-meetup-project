@@ -24,10 +24,14 @@ const MostRatedEvents = () => {
                                         <p>{`Joined: ${event.joined.length}`}</p>
                                     </div>
                                 </div>
-                                hr
+                                <hr />
                                 <div className="row-2">
-                                    <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
-                                    <p>{event.description}</p>
+                                    <div className="date">
+                                        <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
+                                    </div>
+                                    <div className="description">
+                                        <p>{event.description}</p>
+                                    </div>
                                 </div>
                             </a>
                         );

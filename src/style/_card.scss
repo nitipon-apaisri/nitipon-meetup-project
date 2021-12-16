@@ -8,6 +8,7 @@
     max-width: 432px;
     height: 240px;
     max-height: 240px;
+    text-decoration: none;
     p {
         color: #a9a9a9;
     }
@@ -31,6 +32,7 @@
         .row-1 {
             display: flex;
             justify-content: space-between;
+            letter-spacing: 0.05rem;
             h4 {
                 color: #000000;
             }
@@ -47,6 +49,9 @@
     @extend .card-gallery;
     padding: 24px;
     border: 1px solid #eaeaea;
+    hr {
+        margin: 16px 0;
+    }
     .row-1 {
         display: flex;
         .card-img {
@@ -55,11 +60,26 @@
             background-color: grey;
             border-radius: 8px;
         }
-        h4 {
-            color: #000000;
+        .title-n-joined {
+            margin-left: 24px;
+            letter-spacing: 0.05rem;
+            h4 {
+                color: #000000;
+            }
+            p {
+                margin-top: 6px;
+                font-size: 0.85rem;
+            }
         }
     }
     .row-2 {
+        .description {
+            margin-top: 16px;
+            p {
+                font-weight: 500;
+                color: #6f6f6f;
+            }
+        }
         margin-top: 4px;
         p {
             font-size: 0.75rem;

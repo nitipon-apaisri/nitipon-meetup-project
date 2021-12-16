@@ -10,13 +10,11 @@ const Overview = () => {
             <div className="contents-container">
                 <Hero />
                 <hr className="home-hr" />
-                <div>
-                    <div className="most-interested">
-                        <MostInterestedEvents />
-                        <UpcomingEvents />
-                        <MostRatedEvents />
-                    </div>
-                </div>
+                <MostInterestedEvents />
+                <hr className="home-hr" />
+                <UpcomingEvents />
+                <hr className="home-hr" />
+                <MostRatedEvents />
             </div>
         </div>
     );

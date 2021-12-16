@@ -33,6 +33,7 @@
   max-width: 432px;
   height: 240px;
   max-height: 240px;
+  text-decoration: none;
 }
 .card-gallery p, .medium-info p, .full-pic p {
   color: #a9a9a9;
@@ -58,6 +59,7 @@
 .full-pic .short-info .row-1 {
   display: flex;
   justify-content: space-between;
+  letter-spacing: 0.05rem;
 }
 .full-pic .short-info .row-1 h4 {
   color: #000000;
@@ -73,6 +75,9 @@
   padding: 24px;
   border: 1px solid #eaeaea;
 }
+.medium-info hr {
+  margin: 16px 0;
+}
 .medium-info .row-1 {
   display: flex;
 }
@@ -82,11 +87,26 @@
   background-color: grey;
   border-radius: 8px;
 }
-.medium-info .row-1 h4 {
+.medium-info .row-1 .title-n-joined {
+  margin-left: 24px;
+  letter-spacing: 0.05rem;
+}
+.medium-info .row-1 .title-n-joined h4 {
   color: #000000;
+}
+.medium-info .row-1 .title-n-joined p {
+  margin-top: 6px;
+  font-size: 0.85rem;
 }
 .medium-info .row-2 {
   margin-top: 4px;
+}
+.medium-info .row-2 .description {
+  margin-top: 16px;
+}
+.medium-info .row-2 .description p {
+  font-weight: 500;
+  color: #6f6f6f;
 }
 .medium-info .row-2 p {
   font-size: 0.75rem;
@@ -137,11 +157,11 @@ body nav .routes ul li a {
 }
 body .contents-container {
   padding: 0 40px;
-  margin: auto;
+  margin: 48px auto;
 }
 body .contents-container .home-hr {
   width: 640px;
-  margin: 24px auto;
+  margin: 48px auto;
 }
 body .contents-container .title {
   text-transform: uppercase;
