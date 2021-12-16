@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router";
 import { users } from "../../db/users";
+import { AuthContext } from "../../store/authContext";
 const SignIn = () => {
+    const authContext = useContext(AuthContext);
     const [username, setUsername] = useState("");
     const [password, setPasswprd] = useState("");
+    const navigate = useNavigate();
     const submit = () => {
         users.find((r) => {
             if (r.username === username && r.password === password) {
-                console.log(r);
+                authContext.singIn(username, password);
+                setUsername("");
+                setPasswprd("");
+                navigate("/");
             } else {
                 console.log("Not find user");
             }
             return 0;
         });
-        // window.location.reload();
     };
     return (
         <div className="user-auth-container">

@@ -19,6 +19,7 @@ body {
         padding: 20px 40px;
         border-bottom: 2px solid #f3f3f3;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         .routes {
             display: flex;
@@ -103,6 +104,8 @@ body {
                     }
                 }
             }
+        }
+        .user-profile {
         }
     }
     .contents-container {

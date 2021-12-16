@@ -1,6 +1,9 @@
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../../store/authContext";
 const NavigationBar = () => {
+    const authContext = useContext(AuthContext);
+    const [auth, setAuth] = useState(false);
     const navigate = useNavigate();
     const toUserAuth = () => {
         navigate("/auth");
@@ -8,6 +11,9 @@ const NavigationBar = () => {
     const toRegister = () => {
         navigate("/register");
     };
+    useEffect(() => {
+        setAuth(authContext.auth);
+    }, [authContext]);
     return (
         <nav>
             <div className="routes">
@@ -24,18 +30,24 @@ const NavigationBar = () => {
                     </li>
                 </ul>
             </div>
-            <div className="user-actions">
-                <div className="signUp">
-                    <button onClick={toRegister}>
-                        <p>Sign Up</p>
-                    </button>
+            {auth ? (
+                <div className="user-profile">
+                    <h3>{authContext.user.authUsername}</h3>
                 </div>
-                <div className="signIn">
-                    <button onClick={toUserAuth}>
-                        <p>Sign In</p>
-                    </button>
+            ) : (
+                <div className="user-actions">
+                    <div className="signUp">
+                        <button onClick={toRegister}>
+                            <p>Sign Up</p>
+                        </button>
+                    </div>
+                    <div className="signIn">
+                        <button onClick={toUserAuth}>
+                            <p>Sign In</p>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )}
         </nav>
     );
 };
