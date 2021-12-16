@@ -9,7 +9,7 @@ const UpcomingEvents = () => {
 
             <div className="gallery">
                 {eventsDB
-                    .sort((a, b) => (a.date > b.date ? 1 : -1))
+                    .sort((a, b) => (a.date.dateInfo > b.date.dateInfo ? 1 : -1))
                     .slice(0, 3)
                     .map((event, index) => {
                         return (
