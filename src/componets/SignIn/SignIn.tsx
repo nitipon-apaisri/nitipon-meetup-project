@@ -8,17 +8,21 @@ const SignIn = () => {
     const [password, setPasswprd] = useState("");
     const navigate = useNavigate();
     const submit = () => {
-        users.find((r) => {
-            if (r.username === username && r.password === password) {
-                authContext.singIn(username, password);
-                setUsername("");
-                setPasswprd("");
-                navigate("/");
-            } else {
-                console.log("Not find user");
-            }
-            return 0;
-        });
+        if (username === "" && password === "") {
+            console.log("please fill the inputs");
+        } else {
+            users.find((r) => {
+                if (r.username === username && r.password === password) {
+                    authContext.singIn(username, password);
+                    setUsername("");
+                    setPasswprd("");
+                    navigate("/");
+                } else {
+                    console.log("Not find user");
+                }
+                return 0;
+            });
+        }
     };
     return (
         <div className="user-auth-container">
