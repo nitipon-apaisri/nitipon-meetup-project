@@ -2,8 +2,9 @@
 @import "./hero";
 @import "./card";
 @import "./announcementBanner";
+@import "./sign-in";
 //prettier-ignore
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p, a, label {
     margin: 0;
     font-family: "Rubik", sans-serif;
 }
@@ -105,8 +106,8 @@ body {
                 }
             }
         }
-        .user-profile {
-        }
+        // .user-profile {
+        // }
     }
     .contents-container {
         padding: 0 40px;

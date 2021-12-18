@@ -149,7 +149,90 @@
   width: 586px;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+.user-auth-container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+}
+.user-auth-container .auth-contents {
+  max-width: 1240px;
+  display: flex;
+}
+.user-auth-container .auth-contents .left {
+  width: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #eb445d;
+  border-radius: 24px 0 0 24px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.user-auth-container .auth-contents .left img {
+  width: 480px;
+  height: 400px;
+}
+.user-auth-container .auth-contents .left h1 {
+  text-align: center;
+  max-width: 320px;
+  color: white;
+}
+.user-auth-container .auth-contents .right {
+  width: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding: 40px;
+}
+.user-auth-container .auth-contents .right .inputs {
+  margin-top: 64px;
+}
+.user-auth-container .auth-contents .right .inputs .username,
+.user-auth-container .auth-contents .right .inputs .password {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 24px;
+}
+.user-auth-container .auth-contents .right .inputs .username label,
+.user-auth-container .auth-contents .right .inputs .password label {
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  letter-spacing: 0.025rem;
+}
+.user-auth-container .auth-contents .right .inputs .username input,
+.user-auth-container .auth-contents .right .inputs .password input {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  background-color: #fcfcfc;
+}
+.user-auth-container .auth-contents .right .inputs .footer {
+  display: flex;
+  justify-content: right;
+}
+.user-auth-container .auth-contents .right .inputs button {
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid #eb445d;
+  background-color: #eb445d;
+}
+.user-auth-container .auth-contents .right .inputs button p {
+  color: white;
+}
+.user-auth-container .auth-contents .right .inputs button:hover {
+  cursor: pointer;
+  background-color: white;
+  transition-duration: 200ms;
+}
+.user-auth-container .auth-contents .right .inputs button:hover p {
+  color: #eb445d;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, label {
   margin: 0;
   font-family: "Rubik", sans-serif;
 }
