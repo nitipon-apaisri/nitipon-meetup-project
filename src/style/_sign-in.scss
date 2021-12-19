@@ -33,10 +33,28 @@
             max-width: 50%;
             box-sizing: border-box;
             padding: 40px;
+            .top {
+                display: flex;
+                justify-content: space-between;
+                button {
+                    padding: 8px 12px;
+                    background-color: #eaeaea;
+                    border-radius: 4px;
+                    border: none;
+                    height: 32px;
+                    p {
+                        font-size: 0.75rem;
+                    }
+                }
+                button:hover {
+                    cursor: pointer;
+                    background-color: #c2c2c2;
+                    transition-duration: 300ms;
+                }
+            }
             .inputs {
                 margin-top: 64px;
-                .username,
-                .password {
+                .input {
                     display: flex;
                     flex-flow: column;
                     margin-bottom: 24px;
@@ -76,6 +94,7 @@
                 }
             }
             .error-msg {
+                margin-bottom: 24px;
                 h6 {
                     letter-spacing: 0.025rem;
                     color: #eb445d;

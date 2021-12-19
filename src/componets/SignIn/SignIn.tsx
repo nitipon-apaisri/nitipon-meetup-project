@@ -31,19 +31,26 @@ const SignIn = () => {
         }
     };
     return (
-        <div className="user-auth-container">
-            <div className="auth-contents card">
+        <div className="user-auth-container card">
+            <div className="auth-contents">
                 <div className="left">
                     <img src={illus} alt="illus" />
                     <h1>Make the world a better Place</h1>
                 </div>
                 <div className="right">
-                    <div className="title">
+                    <div className="top">
                         <h1>Sign In</h1>
+                        <button
+                            onClick={() => {
+                                navigate("/");
+                            }}
+                        >
+                            <p>X</p>
+                        </button>
                     </div>
                     <hr />
                     <div className="inputs">
-                        <div className="username">
+                        <div className="input username">
                             <label htmlFor="username">Username</label>
                             <input
                                 type="text"
@@ -52,7 +59,7 @@ const SignIn = () => {
                                 }}
                             />
                         </div>
-                        <div className="password">
+                        <div className="input password">
                             <label htmlFor="password">Password</label>
                             <input
                                 type="password"

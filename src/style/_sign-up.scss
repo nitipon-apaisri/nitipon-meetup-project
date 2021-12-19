@@ -1,0 +1,27 @@
+.sign-up-container {
+    width: 800px;
+    .auth-contents {
+        max-width: 800px;
+        .sign-up-left {
+            width: 10%;
+        }
+        .sign-up-right {
+            width: 90%;
+            max-width: 90%;
+            hr {
+                margin-top: 24px;
+            }
+            .inputs {
+                margin-top: 40px;
+                .user-info,
+                .sing-in-info {
+                    display: flex;
+                    justify-content: space-between;
+                    .input {
+                        width: 48%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -14,7 +14,6 @@ function App() {
             lastName: "Alderson",
         };
         register(admin.username, admin.password, admin.firstName, admin.lastName);
-        console.log(users);
     }
     return (
         <div className="App">
