@@ -231,6 +231,10 @@
 .user-auth-container .auth-contents .right .inputs button:hover p {
   color: #eb445d;
 }
+.user-auth-container .auth-contents .right .error-msg h6 {
+  letter-spacing: 0.025rem;
+  color: #eb445d;
+}
 
 h1, h2, h3, h4, h5, h6, p, a, label {
   margin: 0;

@@ -7,19 +7,24 @@ const SignIn = () => {
     const authContext = useContext(AuthContext);
     const [username, setUsername] = useState("");
     const [password, setPasswprd] = useState("");
+    const [errorMsg, setErrorMsg] = useState(false);
+    const [wrongInputs, setWrongInput] = useState(false);
     const navigate = useNavigate();
     const submit = () => {
         if (username === "" && password === "") {
-            console.log("please fill the inputs");
+            setErrorMsg(true);
         } else {
             users.find((r) => {
                 if (r.username === username && r.password === password) {
                     authContext.singIn(username, password);
+                    setErrorMsg(false);
+                    setWrongInput(false);
                     setUsername("");
                     setPasswprd("");
                     navigate("/");
                 } else {
-                    console.log("Not find user");
+                    setErrorMsg(true);
+                    setWrongInput(true);
                 }
                 return 0;
             });
@@ -56,6 +61,12 @@ const SignIn = () => {
                                 }}
                             />
                         </div>
+
+                        {errorMsg && (
+                            <div className="error-msg">
+                                {wrongInputs ? <h6>Username or password is wrong</h6> : <h6>Please fill the inputs</h6>}
+                            </div>
+                        )}
                         <div className="footer">
                             <button onClick={submit}>
                                 <p>Sign In</p>
