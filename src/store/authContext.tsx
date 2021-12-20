@@ -15,11 +15,12 @@ const AuthProvider = (props: any) => {
     const [user, setUser] = useState({
         authUsername: "",
         authPassword: "",
+        firstName: "",
+        lastName: "",
     });
-    const singIn = (username: string, password: string) => {
+    const singIn = (username: string, password: string, firstName: string, lastName: string) => {
         setAuth(true);
-        setUser({ ...user, authUsername: username, authPassword: password });
-        console.log(user);
+        setUser({ ...user, authUsername: username, authPassword: password, firstName: firstName, lastName: lastName });
     };
     return <AuthContext.Provider value={{ auth, user, singIn }}>{props.children}</AuthContext.Provider>;
 };

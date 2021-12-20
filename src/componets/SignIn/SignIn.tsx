@@ -16,7 +16,7 @@ const SignIn = () => {
         } else {
             users.find((r) => {
                 if (r.username === username && r.password === password) {
-                    authContext.singIn(username, password);
+                    authContext.singIn(username, password, r.userInfo.firstName, r.userInfo.lastName);
                     setErrorMsg(false);
                     setWrongInput(false);
                     setUsername("");

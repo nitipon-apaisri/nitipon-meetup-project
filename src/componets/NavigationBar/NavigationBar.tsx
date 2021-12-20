@@ -4,12 +4,20 @@ import { AuthContext } from "../../store/authContext";
 const NavigationBar = () => {
     const authContext = useContext(AuthContext);
     const [auth, setAuth] = useState(false);
+    const [dropDownMenu, setDropDownMenu] = useState(false);
     const navigate = useNavigate();
     const toUserAuth = () => {
         navigate("/auth");
     };
     const toRegister = () => {
         navigate("/register");
+    };
+    const toggleDropDownMenu = () => {
+        setDropDownMenu(!dropDownMenu);
+    };
+    const signOut = () => {
+        setAuth(false);
+        setDropDownMenu(false);
     };
     useEffect(() => {
         setAuth(authContext.auth);
@@ -31,9 +39,33 @@ const NavigationBar = () => {
                 </ul>
             </div>
             {auth ? (
-                <div className="user-profile">
-                    <h3>{authContext.user.authUsername}</h3>
-                </div>
+                dropDownMenu ? (
+                    <div className="dropdown-menu">
+                        <div className="user-profile">
+                            <button className="user-name button" onClick={toggleDropDownMenu}>
+                                <h3>
+                                    {authContext.user.firstName} {authContext.user.lastName}
+                                </h3>
+                            </button>
+                            <hr />
+                            <button className="profile button">
+                                <h3>Profile</h3>
+                            </button>
+                            <hr />
+                            <button className="sign-out button" onClick={signOut}>
+                                <h3>Sign Out</h3>
+                            </button>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="user-profile">
+                        <button className="user-name button" onClick={toggleDropDownMenu}>
+                            <h3>
+                                {authContext.user.firstName} {authContext.user.lastName}
+                            </h3>
+                        </button>
+                    </div>
+                )
             ) : (
                 <div className="user-actions">
                     <div className="signUp">
