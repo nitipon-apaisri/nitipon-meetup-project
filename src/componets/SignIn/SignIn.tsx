@@ -57,6 +57,8 @@ const SignIn = () => {
                                 onChange={(e) => {
                                     setUsername(e.target.value);
                                 }}
+                                value={username}
+                                aria-label="username"
                             />
                         </div>
                         <div className="input password">
