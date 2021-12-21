@@ -46,6 +46,7 @@ const SignUp = () => {
                                     onChange={(e) => {
                                         setFirstName(e.target.value);
                                     }}
+                                    aria-label="firstName"
                                 />
                             </div>
                             <div className="input lastName">
@@ -55,6 +56,7 @@ const SignUp = () => {
                                     onChange={(e) => {
                                         setLastName(e.target.value);
                                     }}
+                                    aria-label="lastName"
                                 />
                             </div>
                         </div>
@@ -84,7 +86,7 @@ const SignUp = () => {
                             </div>
                         )}
                         <div className="footer">
-                            <button onClick={submit} className="sign-up-button">
+                            <button onClick={submit} className="sign-up-button" data-testid="signUpBTN">
                                 <p>Sign Up</p>
                             </button>
                         </div>
