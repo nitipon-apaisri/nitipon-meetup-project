@@ -11,7 +11,7 @@ const SignIn = () => {
     const [wrongInputs, setWrongInput] = useState(false);
     const navigate = useNavigate();
     const submit = () => {
-        if (username === "" && password === "") {
+        if (username === "" || password === "") {
             setErrorMsg(true);
         } else {
             users.find((r) => {
@@ -68,6 +68,8 @@ const SignIn = () => {
                                 onChange={(e) => {
                                     setPasswprd(e.target.value);
                                 }}
+                                value={password}
+                                aria-label="password"
                             />
                         </div>
 
@@ -77,7 +79,7 @@ const SignIn = () => {
                             </div>
                         )}
                         <div className="footer">
-                            <button onClick={submit}>
+                            <button onClick={submit} data-testid="signInBTN">
                                 <p>Sign In</p>
                             </button>
                         </div>
