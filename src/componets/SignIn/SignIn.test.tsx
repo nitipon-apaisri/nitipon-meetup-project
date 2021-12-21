@@ -37,6 +37,6 @@ describe("Sing In test", () => {
         userEvent.type(passwordInput, "admin");
         userEvent.click(screen.getByTestId("signInBTN"));
         const errorMsg = screen.getByText(/please fill the inputs/i);
-        expect(errorMsg).toHaveTextContent("Please fill the inputs");
+        expect(errorMsg).toBeInTheDocument();
     });
 });

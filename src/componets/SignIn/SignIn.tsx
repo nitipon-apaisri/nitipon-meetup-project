@@ -19,8 +19,6 @@ const SignIn = () => {
                     authContext.singIn(username, password, r.userInfo.firstName, r.userInfo.lastName);
                     setErrorMsg(false);
                     setWrongInput(false);
-                    setUsername("");
-                    setPasswprd("");
                     navigate("/");
                 } else {
                     setErrorMsg(true);

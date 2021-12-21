@@ -9,16 +9,12 @@ const SignUp = () => {
     const [errorMsg, setErrorMsg] = useState(false);
     const navigate = useNavigate();
     const submit = () => {
-        if (username !== "" && password !== "" && firstName !== "" && lastName !== "") {
+        if (username === "" || password === "" || firstName === "" || lastName === "") {
+            setErrorMsg(true);
+        } else {
             register(username, password, firstName, lastName);
             navigate("/auth");
-            setUsername("");
-            setPasswprd("");
-            setFirstName("");
-            setLastName("");
             setErrorMsg(false);
-        } else {
-            setErrorMsg(true);
         }
     };
     return (
@@ -68,6 +64,7 @@ const SignUp = () => {
                                     onChange={(e) => {
                                         setUsername(e.target.value);
                                     }}
+                                    aria-label="username"
                                 />
                             </div>
                             <div className="input password">
@@ -77,14 +74,11 @@ const SignUp = () => {
                                     onChange={(e) => {
                                         setPasswprd(e.target.value);
                                     }}
+                                    aria-label="password"
                                 />
                             </div>
                         </div>
-                        {errorMsg && (
-                            <div className="error-msg">
-                                <h6>Please fill the inputs</h6>
-                            </div>
-                        )}
+                        <div className="error-msg">{errorMsg && <h6>Please fill the inputs</h6>}</div>
                         <div className="footer">
                             <button onClick={submit} className="sign-up-button" data-testid="signUpBTN">
                                 <p>Sign Up</p>
