@@ -2,7 +2,7 @@ export interface eventModel {
     id: string,
     title: string,
     description: string,
-    joined: String[],
+    join: String[],
     interested: string[],
     location: Address,
     rate: number,
@@ -26,7 +26,7 @@ export const eventsDB: eventModel[]= [
         id:'1', 
         title: 'Javascript Hackathon', 
         description: "Javascript is all", 
-        joined:["xC10","xC40", "xC41", "xC42",],
+        join:["xC10","xC40", "xC41", "xC42",],
         interested:["xC11","xC12", "xC13"],
         location: {
             street: "Kujoji",
@@ -45,7 +45,7 @@ export const eventsDB: eventModel[]= [
         id:'2', 
         title: 'Blockchain Hackathon', 
         description: "Into the Block", 
-        joined:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
+        join:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
         interested:["xC11","xC12"],
         location: {
             street: "Kujoji",
@@ -64,7 +64,7 @@ export const eventsDB: eventModel[]= [
         id:'3', 
         title: 'Japan Day', 
         description: "Nippon", 
-        joined:["xC10"],
+        join:["xC10"],
         interested:["xC11"],
         location: {
             street: "Kujoji",

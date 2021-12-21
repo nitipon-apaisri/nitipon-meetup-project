@@ -27,9 +27,9 @@ const UpcomingEvents = () => {
                                             backgroundImage: `url(${event.imgCover})`,
                                         }}
                                     ></div>
-                                    <div className="title-n-joined">
+                                    <div className="title-n-join">
                                         <h4>{event.title}</h4>
-                                        <p>{`Joined: ${event.joined.length}`}</p>
+                                        <p>{`Join: ${event.join.length}`}</p>
                                     </div>
                                 </div>
                                 <hr />

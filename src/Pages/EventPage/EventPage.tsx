@@ -14,9 +14,9 @@ const EventPage = () => {
                     <h4>Information</h4>
                     <p data-testid="description">{eventsDB[eventIndex].description}</p>
                 </div>
-                <div className="joined">
-                    <h4>Joined</h4>
-                    <p data-testid="joined-total">{eventsDB[eventIndex].joined.length}</p>
+                <div className="join">
+                    <h4>join</h4>
+                    <p data-testid="join-total">{eventsDB[eventIndex].join.length}</p>
                 </div>
             </div>
             <div className="feedback">

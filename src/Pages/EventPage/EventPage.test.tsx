@@ -12,10 +12,10 @@ describe("Event page", () => {
         const informationTitle = await screen.findByText(new RegExp(description));
         expect(informationTitle).toBeInTheDocument();
     });
-    it("Render event joined", async () => {
+    it("Render event join", async () => {
         renderWithPath("/event/1", <EventPage />, "/event/:id");
-        const joined = screen.getByTestId("joined-total");
-        expect(joined).toHaveTextContent("4");
+        const join = screen.getByTestId("join-total");
+        expect(join).toHaveTextContent("4");
     });
     it("Render feedback list", async () => {
         renderWithPath("/event/1", <EventPage />, "/event/:id");

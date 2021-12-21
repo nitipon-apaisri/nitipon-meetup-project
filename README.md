@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 -   As a user, I would like see informations about the event, that I can read about the event.
 -   As a user, I would like to have a button to join the event, that I can join the event.
--   As a user, I would like to know about time and location for the event, that I can manage my time if I joined.
+-   As a user, I would like to know about time and location for the event, that I can manage my time if I join.
 -   As a user, I would like see how many people will coming to the event, that lets me to think about the quality for the event.
 -   As a user, I would like to see how many people interested in the event, that lets me to know about popularity for the event.
 

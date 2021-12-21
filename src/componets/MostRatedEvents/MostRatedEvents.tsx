@@ -25,7 +25,7 @@ const MostRatedEvents = () => {
                                             backgroundImage: `url(${event.imgCover})`,
                                         }}
                                     ></div>
-                                    <div className="title-n-joined">
+                                    <div className="title-n-join">
                                         <h4>{event.title}</h4>
                                         <p>{`Rate: ${event.rate}`}</p>
                                     </div>
