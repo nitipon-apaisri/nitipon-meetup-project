@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { screen, within } from "@testing-library/react";
 import { eventsDB } from "../../db/events";
 import { renderWithPath } from "../../testing-utils";
 import EventPage from "./EventPage";
@@ -19,7 +19,9 @@ describe("Event page", () => {
     });
     it("Render feedback list", async () => {
         renderWithPath("/event/1", <EventPage />, "/event/:id");
-        const items = screen.getAllByRole("listitem");
+        const list = screen.getByRole("list", { name: /feedback/i });
+        const { getAllByRole } = within(list);
+        const items = getAllByRole("listitem");
         const feedbackLength = eventsDB[0].feedback.length;
         expect(items).toHaveLength(feedbackLength);
     });

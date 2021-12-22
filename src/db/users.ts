@@ -7,6 +7,7 @@ export interface userModel {
         firstName: string,
         lastName: string
     }
+    interests: string[]
 }
 
 export const users: userModel[] = [];
@@ -16,7 +17,8 @@ export const register = (username: string, password: string, firstName: string, 
         id: uuidv4(),
         username: username,
         password: password,
-        userInfo: {firstName: firstName, lastName: lastName}
+        userInfo: {firstName: firstName, lastName: lastName},
+        interests: []
     };
     users.push(user);
 };

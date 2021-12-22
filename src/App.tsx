@@ -8,8 +8,8 @@ import { register, users } from "./db/users";
 function App() {
     if (users.length === 0) {
         const admin = {
-            username: "admin",
-            password: "admin",
+            username: "rxz",
+            password: "rxz",
             firstName: "Elliot",
             lastName: "Alderson",
         };
