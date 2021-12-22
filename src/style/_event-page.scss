@@ -4,22 +4,43 @@
         .event-header {
             display: flex;
             justify-content: space-between;
-            // .event-title {
-
-            // }
+            align-items: center;
+            .event-title {
+                p {
+                    font-size: 0.75rem;
+                    color: #a9a9a9;
+                }
+            }
+            button {
+                border: 1px solid transparent;
+                padding: 16px 32px;
+                border-radius: 16px;
+                p {
+                    font-weight: 600;
+                }
+            }
+            button:hover {
+                cursor: pointer;
+                background-color: #eb445d;
+                color: white;
+                transition-duration: 300ms;
+            }
         }
         .event-img-cover {
             position: relative;
             width: 100%;
-            height: 488px;
+            height: 440px;
             border-radius: 32px;
             background-size: cover;
             background-position: center;
             box-sizing: border-box;
+            margin: 40px 0;
+            box-sizing: border-box;
+            box-shadow: (0px 4px 20px rgba(230, 230, 230, 0.25));
+            border-radius: 24px;
             .event-info {
                 position: absolute;
                 width: 480px;
-                height: 376px;
                 max-width: 480px;
                 max-height: 376px;
                 box-sizing: border-box;
@@ -27,9 +48,89 @@
                 padding: 40px;
                 margin: 0;
                 border-radius: 32px;
-                top: 40px;
-                right: 56px;
-                transform: translate(0px, 20px);
+                // top: 40px;
+                // right: 56px;
+                // transform: translate(0px, 20px);
+                position: absolute;
+                top: 50%;
+                left: 80%;
+                transform: translate(-50%, -50%);
+                .event-date {
+                    margin: 24px 0;
+                    p {
+                        font-size: 0.7rem;
+                        margin: 16px 0;
+                        letter-spacing: 0.025rem;
+                        font-weight: 500;
+                        color: #a9a9a9;
+                    }
+                }
+                button {
+                    margin-top: 24px;
+                    width: 100%;
+                    border: 1px solid transparent;
+                    padding: 16px 32px;
+                    border-radius: 16px;
+                    background-color: #eb445d;
+                    color: white;
+                    p {
+                        font-weight: 600;
+                    }
+                }
+                button:hover {
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    background-color: #fa2c4b;
+                    color: #ffffff;
+                    transition-duration: 300ms;
+                }
+            }
+        }
+        .information {
+            display: flex;
+            justify-content: space-between;
+            margin: 32px 0;
+            .description {
+                width: 69%;
+                height: 320px;
+                box-sizing: border-box;
+                box-shadow: (0px 4px 20px rgba(230, 230, 230, 0.25));
+                border-radius: 24px;
+                padding: 40px;
+                border-radius: 32px;
+                p {
+                    margin-top: 16px;
+                    font-size: 0.8rem;
+                    color: #949494;
+                }
+            }
+            .side-info {
+                width: 29%;
+                box-sizing: border-box;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                .side-info-card {
+                    @extend .description;
+                    width: 100%;
+                    height: 46%;
+                    hr {
+                        width: 100%;
+                    }
+                    h4 {
+                        font-size: 1.25rem;
+                    }
+                }
+                .join {
+                    background-color: #f5cc6e;
+                    hr {
+                        background-color: black;
+                    }
+                }
+                .interesting {
+                    background-color: #6968ac;
+                    color: white;
+                }
             }
         }
     }

@@ -4,15 +4,15 @@
   display: flex;
   justify-content: space-between;
 }
-.hero-container .description {
+.hero-container .description, .hero-container .event-container .event-wrapper .information .side-info .side-info-card, .event-container .event-wrapper .information .side-info .hero-container .side-info-card {
   max-width: 560px;
   letter-spacing: 0.025rem;
 }
-.hero-container .description h1 {
+.hero-container .description h1, .hero-container .event-container .event-wrapper .information .side-info .side-info-card h1, .event-container .event-wrapper .information .side-info .hero-container .side-info-card h1 {
   font-size: 3rem;
   margin-top: 50px;
 }
-.hero-container .description p {
+.hero-container .description p, .hero-container .event-container .event-wrapper .information .side-info .side-info-card p, .event-container .event-wrapper .information .side-info .hero-container .side-info-card p {
   margin-top: 32px;
   font-weight: 400;
   color: #bcbcbc;
@@ -122,10 +122,10 @@
 .medium-info .row-2 {
   margin-top: 4px;
 }
-.medium-info .row-2 .description {
+.medium-info .row-2 .description, .medium-info .row-2 .event-container .event-wrapper .information .side-info .side-info-card, .event-container .event-wrapper .information .side-info .medium-info .row-2 .side-info-card {
   margin-top: 16px;
 }
-.medium-info .row-2 .description p {
+.medium-info .row-2 .description p, .medium-info .row-2 .event-container .event-wrapper .information .side-info .side-info-card p, .event-container .event-wrapper .information .side-info .medium-info .row-2 .side-info-card p {
   font-weight: 500;
   color: #6f6f6f;
 }
@@ -290,20 +290,42 @@
 .event-container .event-wrapper .event-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.event-container .event-wrapper .event-header .event-title p {
+  font-size: 0.75rem;
+  color: #a9a9a9;
+}
+.event-container .event-wrapper .event-header button {
+  border: 1px solid transparent;
+  padding: 16px 32px;
+  border-radius: 16px;
+}
+.event-container .event-wrapper .event-header button p {
+  font-weight: 600;
+}
+.event-container .event-wrapper .event-header button:hover {
+  cursor: pointer;
+  background-color: #eb445d;
+  color: white;
+  transition-duration: 300ms;
 }
 .event-container .event-wrapper .event-img-cover {
   position: relative;
   width: 100%;
-  height: 488px;
+  height: 440px;
   border-radius: 32px;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  margin: 40px 0;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(230, 230, 230, 0.25);
+  border-radius: 24px;
 }
 .event-container .event-wrapper .event-img-cover .event-info {
   position: absolute;
   width: 480px;
-  height: 376px;
   max-width: 480px;
   max-height: 376px;
   box-sizing: border-box;
@@ -311,9 +333,85 @@
   padding: 40px;
   margin: 0;
   border-radius: 32px;
-  top: 40px;
-  right: 56px;
-  transform: translate(0px, 20px);
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+.event-container .event-wrapper .event-img-cover .event-info .event-date {
+  margin: 24px 0;
+}
+.event-container .event-wrapper .event-img-cover .event-info .event-date p {
+  font-size: 0.7rem;
+  margin: 16px 0;
+  letter-spacing: 0.025rem;
+  font-weight: 500;
+  color: #a9a9a9;
+}
+.event-container .event-wrapper .event-img-cover .event-info button {
+  margin-top: 24px;
+  width: 100%;
+  border: 1px solid transparent;
+  padding: 16px 32px;
+  border-radius: 16px;
+  background-color: #eb445d;
+  color: white;
+}
+.event-container .event-wrapper .event-img-cover .event-info button p {
+  font-weight: 600;
+}
+.event-container .event-wrapper .event-img-cover .event-info button:hover {
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: #fa2c4b;
+  color: #ffffff;
+  transition-duration: 300ms;
+}
+.event-container .event-wrapper .information {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 0;
+}
+.event-container .event-wrapper .information .description, .event-container .event-wrapper .information .side-info .side-info-card {
+  width: 69%;
+  height: 320px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(230, 230, 230, 0.25);
+  border-radius: 24px;
+  padding: 40px;
+  border-radius: 32px;
+}
+.event-container .event-wrapper .information .description p, .event-container .event-wrapper .information .side-info .side-info-card p {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #949494;
+}
+.event-container .event-wrapper .information .side-info {
+  width: 29%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.event-container .event-wrapper .information .side-info .side-info-card {
+  width: 100%;
+  height: 46%;
+}
+.event-container .event-wrapper .information .side-info .side-info-card hr {
+  width: 100%;
+}
+.event-container .event-wrapper .information .side-info .side-info-card h4 {
+  font-size: 1.25rem;
+}
+.event-container .event-wrapper .information .side-info .join {
+  background-color: #f5cc6e;
+}
+.event-container .event-wrapper .information .side-info .join hr {
+  background-color: black;
+}
+.event-container .event-wrapper .information .side-info .interesting {
+  background-color: #6968ac;
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, label {

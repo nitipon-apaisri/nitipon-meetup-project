@@ -14,6 +14,7 @@ const EventPage = () => {
                 <div className="event-header">
                     <div className="event-title">
                         <h1>{eventsDB[eventIndex].title}</h1>
+                        <p>Publiced:</p>
                     </div>
                     <button>
                         <p>Remind Me</p>
@@ -21,12 +22,14 @@ const EventPage = () => {
                 </div>
                 <div className="event-img-cover" style={{ backgroundImage: `url(${eventsDB[eventIndex].imgCover})` }}>
                     <div className="event-info">
-                        <div className="info-title">INFO</div>
+                        <div className="info-title">
+                            <h3>INFO</h3>
+                        </div>
                         <hr />
                         <div className="event-date">
-                            <h6>{eventsDB[eventIndex].date.dateInfo}</h6>
-                            <h6>{eventsDB[eventIndex].date.time}</h6>
-                            <h6>{`${eventsDB[eventIndex].location.street} ${eventsDB[eventIndex].location.city} ${eventsDB[eventIndex].location.country}`}</h6>
+                            <p>{eventsDB[eventIndex].date.dateInfo}</p>
+                            <p>{eventsDB[eventIndex].date.time}</p>
+                            <p>{`${eventsDB[eventIndex].location.street} ${eventsDB[eventIndex].location.city} ${eventsDB[eventIndex].location.country}`}</p>
                         </div>
                         <hr />
                         <button>
@@ -34,17 +37,27 @@ const EventPage = () => {
                         </button>
                     </div>
                 </div>
+                <hr />
                 <div className="information">
                     <div className="description">
-                        <h4>Information</h4>
+                        <h2>ABOUT</h2>
+                        <hr />
                         <p data-testid="description">{eventsDB[eventIndex].description}</p>
                     </div>
-                    <div className="join">
-                        <h4>join</h4>
-                        <p data-testid="join-total">{eventsDB[eventIndex].join.length}</p>
+                    <div className="side-info">
+                        <div className="side-info-card join">
+                            <h2>JOIN</h2>
+                            <hr />
+                            <h4 data-testid="join-total">{eventsDB[eventIndex].join.length} PEOPLE</h4>
+                        </div>
+                        <div className="side-info-card interesting">
+                            <h2>Interesting</h2>
+                            <hr />
+                            <h4 data-testid="join-total">{eventsDB[eventIndex].interested.length} PEOPLE</h4>
+                        </div>
                     </div>
                 </div>
-                <div className="feedback">
+                {/* <div className="feedback">
                     <h4>Feedback</h4>
                     <div className="feedback-list">
                         <ul aria-label="feedback">
@@ -57,17 +70,7 @@ const EventPage = () => {
                             })}
                         </ul>
                     </div>
-                </div>
-                <div className="date-and-location">
-                    <div className="date">
-                        <h4>Date</h4>
-                        <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
-                    </div>
-                    <div className="location">
-                        <h4>Location</h4>
-                        <p data-testid="location">{eventsDB[eventIndex].location.city}</p>
-                    </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
