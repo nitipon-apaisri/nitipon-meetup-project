@@ -1,7 +1,7 @@
 export interface eventModel {
     id: string,
     title: string,
-    description: string,
+    description: {short: string, full: string},
     join: String[],
     interested: string[],
     location: Address,
@@ -25,7 +25,9 @@ export const eventsDB: eventModel[]= [
     {
         id:'1', 
         title: 'Javascript Hackathon', 
-        description: "Javascript is all", 
+        description: {
+            short: "morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et",
+            full:"sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac"}, 
         join:["xC10","xC40", "xC41", "xC42",],
         interested:["xC11","xC12", "xC13"],
         location: {
@@ -44,7 +46,9 @@ export const eventsDB: eventModel[]= [
     {
         id:'2', 
         title: 'Blockchain Hackathon', 
-        description: "Into the Block", 
+        description: {
+            short: "morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et",
+            full:"sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac"}, 
         join:["xC10", "xC40", "xC58", "xC72", "xC85", "xC65"],
         interested:["xC11","xC12"],
         location: {
@@ -63,7 +67,9 @@ export const eventsDB: eventModel[]= [
     {
         id:'3', 
         title: 'Japan Day', 
-        description: "Nippon", 
+        description: {
+            short: "morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et",
+            full:"sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac"}, 
         join:["xC10"],
         interested:["xC11"],
         location: {

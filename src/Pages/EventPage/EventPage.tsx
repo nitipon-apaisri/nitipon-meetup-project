@@ -42,7 +42,7 @@ const EventPage = () => {
                     <div className="description">
                         <h2>ABOUT</h2>
                         <hr />
-                        <p data-testid="description">{eventsDB[eventIndex].description}</p>
+                        <p data-testid="description">{eventsDB[eventIndex].description.full}</p>
                     </div>
                     <div className="side-info">
                         <div className="side-info-card join">

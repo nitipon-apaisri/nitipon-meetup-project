@@ -36,7 +36,7 @@ const MostRatedEvents = () => {
                                         <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
                                     </div>
                                     <div className="description">
-                                        <p>{event.description}</p>
+                                        <p>{event.description.short}</p>
                                     </div>
                                 </div>
                             </Link>
