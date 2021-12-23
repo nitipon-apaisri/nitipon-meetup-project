@@ -27,9 +27,9 @@ const EventPage = () => {
                         </div>
                         <hr />
                         <div className="event-date">
-                            <p>{eventsDB[eventIndex].date.dateInfo}</p>
+                            <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
                             <p>{eventsDB[eventIndex].date.time}</p>
-                            <p>{`${eventsDB[eventIndex].location.street} ${eventsDB[eventIndex].location.city} ${eventsDB[eventIndex].location.country}`}</p>
+                            <p data-testid="location">{`${eventsDB[eventIndex].location.street} ${eventsDB[eventIndex].location.city} ${eventsDB[eventIndex].location.country}`}</p>
                         </div>
                         <hr />
                         <button>
@@ -53,7 +53,7 @@ const EventPage = () => {
                         <div className="side-info-card interesting">
                             <h2>Interesting</h2>
                             <hr />
-                            <h4 data-testid="join-total">{eventsDB[eventIndex].interested.length} PEOPLE</h4>
+                            <h4 data-testid="interesting-total">{eventsDB[eventIndex].interested.length} PEOPLE</h4>
                         </div>
                     </div>
                 </div>
