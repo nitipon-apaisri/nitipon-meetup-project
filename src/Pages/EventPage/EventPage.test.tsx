@@ -1,4 +1,4 @@
-import { screen, within } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { eventsDB } from "../../db/events";
 import { renderWithPath } from "../../testing-utils";
 import EventPage from "./EventPage";

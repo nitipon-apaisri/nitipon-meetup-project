@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { register } from "../../db/users";
+import { register, users } from "../../db/users";
 import { useNavigate } from "react-router";
 const SignUp = () => {
     const [username, setUsername] = useState("");
@@ -7,14 +7,24 @@ const SignUp = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [errorMsg, setErrorMsg] = useState(false);
+    const [duplicateUsername, setDuplicateUsername] = useState(false);
     const navigate = useNavigate();
     const submit = () => {
         if (username === "" || password === "" || firstName === "" || lastName === "") {
             setErrorMsg(true);
-        } else {
-            register(username, password, firstName, lastName);
-            navigate("/auth");
-            setErrorMsg(false);
+        }
+        if (username !== "" || password !== "" || firstName !== "" || lastName !== "") {
+            users.find((r) => {
+                if (r.username !== username) {
+                    register(username, password, firstName, lastName);
+                    navigate("/auth");
+                    setErrorMsg(false);
+                } else {
+                    setErrorMsg(true);
+                    setDuplicateUsername(true);
+                }
+                return 0;
+            });
         }
     };
     return (
@@ -78,7 +88,11 @@ const SignUp = () => {
                                 />
                             </div>
                         </div>
-                        <div className="error-msg">{errorMsg && <h6>Please fill the inputs</h6>}</div>
+                        <div className="error-msg">
+                            {errorMsg && (
+                                <h6>{duplicateUsername ? "Username already taken " : "Please fill the inputs"}</h6>
+                            )}
+                        </div>
                         <div className="footer">
                             <button onClick={submit} className="sign-up-button" data-testid="signUpBTN">
                                 <p>Sign Up</p>
