@@ -14,17 +14,15 @@ const SignUp = () => {
             setErrorMsg(true);
         }
         if (username !== "" || password !== "" || firstName !== "" || lastName !== "") {
-            users.find((r) => {
-                if (r.username !== username) {
-                    register(username, password, firstName, lastName);
-                    navigate("/auth");
-                    setErrorMsg(false);
-                } else {
-                    setErrorMsg(true);
-                    setDuplicateUsername(true);
-                }
-                return 0;
-            });
+            const user = users.find(async (r) => r.username === username);
+            if (user?.username !== username) {
+                register(username, password, firstName, lastName);
+                navigate("/auth");
+                setErrorMsg(false);
+            } else {
+                setErrorMsg(true);
+                setDuplicateUsername(true);
+            }
         }
     };
     return (
@@ -90,7 +88,7 @@ const SignUp = () => {
                         </div>
                         <div className="error-msg">
                             {errorMsg && (
-                                <h6>{duplicateUsername ? "Username already taken " : "Please fill the inputs"}</h6>
+                                <h6>{!duplicateUsername ? "Username already taken " : "Please fill the inputs"}</h6>
                             )}
                         </div>
                         <div className="footer">
