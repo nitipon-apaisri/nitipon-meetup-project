@@ -17,6 +17,7 @@ const NavigationBar = () => {
     };
     const signOut = () => {
         setAuth(false);
+        sessionStorage.removeItem("auth");
         setDropDownMenu(false);
     };
     useEffect(() => {
