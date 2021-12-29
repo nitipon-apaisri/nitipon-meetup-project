@@ -1,12 +1,50 @@
-import { useParams } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import NavigationBar from "../../componets/NavigationBar/NavigationBar";
 import { eventsDB } from "../../db/events";
+import { users, joinTheEvent, declineTheEvent } from "../../db/users";
+import { AuthContext } from "../../store/authContext";
 const EventPage = () => {
-    // const [eventTitle, setEventTitle] = useState("")
+    const authContext = useContext(AuthContext);
+    const navigate = useNavigate();
     const eventId = useParams();
+    const [join, setJoin] = useState(false);
+    const [userIndex, setUserIndex] = useState(Number);
     const eventIndex = eventsDB.findIndex((r: any) => {
         return r.id === eventId.id;
     });
+    const submitToTheEvent = () => {
+        if (authContext.auth) {
+            joinTheEvent(userIndex, eventsDB[eventIndex].title);
+            setJoin(true);
+        }
+    };
+    const declineToTheEvent = () => {
+        declineTheEvent(userIndex, eventsDB[eventIndex].title);
+        setJoin(false);
+    };
+    useEffect(() => {
+        if (authContext.auth) {
+            const validateUser = users.findIndex((r) => {
+                return r.username === authContext.user.authUsername;
+            });
+            if (validateUser !== -1) {
+                const userPosition = users.findIndex((r) => {
+                    return r.username === authContext.user.authUsername;
+                });
+                setUserIndex(userPosition);
+                users[userIndex].joins.find((r) => {
+                    if (r === eventsDB[eventIndex].title) {
+                        setJoin(true);
+                        console.log("JOINED");
+                    }
+                    return 0;
+                });
+            } else {
+                navigate("/");
+            }
+        }
+    }, [authContext, userIndex, join, eventIndex, navigate]);
     return (
         <div className="event-container">
             <NavigationBar />
@@ -32,8 +70,8 @@ const EventPage = () => {
                             <p data-testid="location">{`${eventsDB[eventIndex].location.street}, ${eventsDB[eventIndex].location.city}, ${eventsDB[eventIndex].location.country}`}</p>
                         </div>
                         <hr />
-                        <button>
-                            <p>JOIN!</p>
+                        <button onClick={join ? declineToTheEvent : submitToTheEvent}>
+                            <p>{join ? "DECLINE TO THE MEETUP" : "JOIN THE MEETUP!"}</p>
                         </button>
                     </div>
                 </div>

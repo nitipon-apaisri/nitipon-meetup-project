@@ -6,6 +6,8 @@ type ContextProps = {
     user: any;
     //function
     singIn: any;
+    setAuth: any;
+    signOut: any;
 };
 
 const AuthContext = createContext<Partial<ContextProps>>({});
@@ -22,7 +24,11 @@ const AuthProvider = (props: any) => {
         setAuth(true);
         setUser({ ...user, authUsername: username, authPassword: password, firstName: firstName, lastName: lastName });
     };
-    return <AuthContext.Provider value={{ auth, user, singIn }}>{props.children}</AuthContext.Provider>;
+    const signOut = () => {
+        setAuth(false);
+        setUser({ ...user, authUsername: "", authPassword: "", firstName: "", lastName: "" });
+    };
+    return <AuthContext.Provider value={{ auth, user, singIn, signOut }}>{props.children}</AuthContext.Provider>;
 };
 
 export { AuthProvider, AuthContext };

@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../store/authContext";
 const NavigationBar = () => {
     const authContext = useContext(AuthContext);
@@ -17,6 +17,7 @@ const NavigationBar = () => {
     };
     const signOut = () => {
         setAuth(false);
+        authContext.signOut();
         sessionStorage.removeItem("auth");
         setDropDownMenu(false);
     };
@@ -29,7 +30,7 @@ const NavigationBar = () => {
                 <div className="banner"></div>
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
                         <a href="/">Explore</a>

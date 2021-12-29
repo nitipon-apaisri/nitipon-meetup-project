@@ -19,17 +19,27 @@ function App() {
         register(admin.username, admin.password, admin.firstName, admin.lastName);
     }
     useEffect(() => {
-        if (sessionStorage.getItem("auth")) {
-            const signIn = () => {
-                const foundeUser = JSON.parse(sessionStorage.auth);
-                authContext.singIn(
-                    foundeUser.user.username,
-                    foundeUser.user.password,
-                    foundeUser.user.firstName,
-                    foundeUser.user.lastName
-                );
-            };
-            signIn();
+        if (authContext.auth) {
+            const validateUser = users.findIndex((r) => {
+                return r.username === authContext.user.authUsername;
+            });
+            if (validateUser !== -1) {
+                if (sessionStorage.getItem("auth")) {
+                    const signIn = () => {
+                        const foundeUser = JSON.parse(sessionStorage.auth);
+                        authContext.singIn(
+                            foundeUser.user.username,
+                            foundeUser.user.password,
+                            foundeUser.user.firstName,
+                            foundeUser.user.lastName
+                        );
+                    };
+                    signIn();
+                }
+            } else {
+                sessionStorage.removeItem("auth");
+                window.location.reload();
+            }
         }
         // eslint-disable-next-line
     }, []);

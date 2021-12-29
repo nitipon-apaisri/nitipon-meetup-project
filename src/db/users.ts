@@ -24,3 +24,17 @@ export const register = (username: string, password: string, firstName: string, 
     };
     users.push(user);
 };
+
+export const joinTheEvent = (userIndex:number, eventTitle:string) => {
+    const checkJoinEvents = users[userIndex].joins.includes(eventTitle)
+    if(!checkJoinEvents) {
+        users[userIndex].joins.push(eventTitle)
+        console.log(users[userIndex].joins)
+    }
+}
+export const declineTheEvent = (userIndex:number, eventTitle:string) => {
+    const eventIndex = users[userIndex].joins.findIndex((r) => {
+        return r === eventTitle
+    })
+    users[userIndex].joins.splice(eventIndex, 1)
+}
