@@ -1,6 +1,6 @@
 import HowToBanner from "../../componets/AnnouncementBanner/HowToBanner";
 import Hero from "../../componets/Hero/Hero";
-import MostInterestedEvents from "../../componets/MostInterestedEvents/MostInterestedEvents";
+import MostInterestedEvents from "../../componets/MostPopularEvents/MostPopularEvents";
 import MostRatedEvents from "../../componets/MostRatedEvents/MostRatedEvents";
 import NavigationBar from "../../componets/NavigationBar/NavigationBar";
 import UpcomingEvents from "../../componets/UpcomingEvents/UpcomingEvents";

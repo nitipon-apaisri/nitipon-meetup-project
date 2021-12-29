@@ -19,6 +19,17 @@ const SignIn = () => {
                     authContext.singIn(username, password, r.userInfo.firstName, r.userInfo.lastName);
                     setErrorMsg(false);
                     setWrongInput(false);
+                    sessionStorage.setItem(
+                        "auth",
+                        JSON.stringify({
+                            user: {
+                                username: username,
+                                password: password,
+                                firstName: r.userInfo.firstName,
+                                lastName: r.userInfo.lastName,
+                            },
+                        })
+                    );
                     navigate("/");
                 } else {
                     setErrorMsg(true);

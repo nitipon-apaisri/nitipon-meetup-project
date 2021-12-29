@@ -29,7 +29,7 @@ const EventPage = () => {
                         <div className="event-date">
                             <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
                             <p>{eventsDB[eventIndex].date.time}</p>
-                            <p data-testid="location">{`${eventsDB[eventIndex].location.street} ${eventsDB[eventIndex].location.city} ${eventsDB[eventIndex].location.country}`}</p>
+                            <p data-testid="location">{`${eventsDB[eventIndex].location.street}, ${eventsDB[eventIndex].location.city}, ${eventsDB[eventIndex].location.country}`}</p>
                         </div>
                         <hr />
                         <button>
