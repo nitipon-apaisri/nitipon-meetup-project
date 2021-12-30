@@ -343,30 +343,55 @@
 .event-container .event-wrapper .event-img-cover .event-info .event-date {
   margin: 24px 0;
 }
-.event-container .event-wrapper .event-img-cover .event-info .event-date p {
+.event-container .event-wrapper .event-img-cover .event-info .event-date .row {
+  display: flex;
+}
+.event-container .event-wrapper .event-img-cover .event-info .event-date .row p {
   font-size: 0.7rem;
-  margin: 16px 0;
+  margin: 0px 16px 8px 0;
   letter-spacing: 0.025rem;
   font-weight: 500;
   color: #a9a9a9;
 }
-.event-container .event-wrapper .event-img-cover .event-info button {
+.event-container .event-wrapper .event-img-cover .event-info button p {
+  letter-spacing: 0.05rem;
+}
+.event-container .event-wrapper .event-img-cover .event-info button.decline {
   margin-top: 24px;
   width: 100%;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 16px 32px;
   border-radius: 16px;
   background-color: #eb445d;
   color: white;
 }
-.event-container .event-wrapper .event-img-cover .event-info button p {
+.event-container .event-wrapper .event-img-cover .event-info button.decline p {
   font-weight: 600;
 }
-.event-container .event-wrapper .event-img-cover .event-info button:hover {
+.event-container .event-wrapper .event-img-cover .event-info button.decline:hover {
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-color: #fa2c4b;
   color: #ffffff;
+  transition-duration: 300ms;
+}
+.event-container .event-wrapper .event-img-cover .event-info button.join {
+  margin-top: 24px;
+  width: 100%;
+  border: 2px solid #efefef;
+  padding: 16px 32px;
+  border-radius: 16px;
+  background-color: #efefef;
+  color: #eb445d;
+}
+.event-container .event-wrapper .event-img-cover .event-info button.join p {
+  font-weight: 600;
+}
+.event-container .event-wrapper .event-img-cover .event-info button.join:hover {
+  cursor: pointer;
+  background-color: #fa2c4b;
+  color: #ffffff;
+  border: 2px solid transparent;
   transition-duration: 300ms;
 }
 .event-container .event-wrapper .information {

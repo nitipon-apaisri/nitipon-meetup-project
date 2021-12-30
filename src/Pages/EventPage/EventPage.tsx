@@ -4,15 +4,25 @@ import NavigationBar from "../../componets/NavigationBar/NavigationBar";
 import { eventsDB } from "../../db/events";
 import { users, joinTheEvent, declineTheEvent } from "../../db/users";
 import { AuthContext } from "../../store/authContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarDays, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+
 const EventPage = () => {
+    //Variable
     const authContext = useContext(AuthContext);
     const navigate = useNavigate();
     const eventId = useParams();
     const [join, setJoin] = useState(false);
     const [userIndex, setUserIndex] = useState(Number);
+    const calendraDays = <FontAwesomeIcon icon={faCalendarDays} />;
+    const clock = <FontAwesomeIcon icon={faClock} />;
+    const locationPin = <FontAwesomeIcon icon={faLocationPin} />;
     const eventIndex = eventsDB.findIndex((r: any) => {
         return r.id === eventId.id;
     });
+
+    //Functions
     const submitToTheEvent = () => {
         if (authContext.auth) {
             joinTheEvent(userIndex, eventsDB[eventIndex].title);
@@ -23,6 +33,8 @@ const EventPage = () => {
         declineTheEvent(userIndex, eventsDB[eventIndex].title);
         setJoin(false);
     };
+
+    //Hook
     useEffect(() => {
         if (authContext.auth) {
             const validateUser = users.findIndex((r) => {
@@ -65,12 +77,24 @@ const EventPage = () => {
                         </div>
                         <hr />
                         <div className="event-date">
-                            <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
-                            <p>{eventsDB[eventIndex].date.time}</p>
-                            <p data-testid="location">{`${eventsDB[eventIndex].location.street}, ${eventsDB[eventIndex].location.city}, ${eventsDB[eventIndex].location.country}`}</p>
+                            <div className="row">
+                                <p>{calendraDays}</p>
+                                <p data-testid="date">{eventsDB[eventIndex].date.dateInfo}</p>
+                            </div>
+                            <div className="row">
+                                <p>{clock}</p>
+                                <p>{eventsDB[eventIndex].date.time}</p>
+                            </div>
+                            <div className="row">
+                                <p>{locationPin}</p>
+                                <p data-testid="location">{`${eventsDB[eventIndex].location.street}, ${eventsDB[eventIndex].location.city}, ${eventsDB[eventIndex].location.country}`}</p>
+                            </div>
                         </div>
                         <hr />
-                        <button onClick={join ? declineToTheEvent : submitToTheEvent}>
+                        <button
+                            onClick={join ? declineToTheEvent : submitToTheEvent}
+                            className={join ? "decline" : "join"}
+                        >
                             <p>{join ? "DECLINE TO THE MEETUP" : "JOIN THE MEETUP!"}</p>
                         </button>
                     </div>
@@ -89,7 +113,7 @@ const EventPage = () => {
                             <h4 data-testid="join-total">{eventsDB[eventIndex].join.length} PEOPLE</h4>
                         </div>
                         <div className="side-info-card interesting">
-                            <h2>Interesting</h2>
+                            <h2>INTERESTING</h2>
                             <hr />
                             <h4 data-testid="interesting-total">{eventsDB[eventIndex].interested.length} PEOPLE</h4>
                         </div>

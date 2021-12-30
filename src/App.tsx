@@ -11,8 +11,8 @@ function App() {
     const authContext = useContext(AuthContext);
     if (users.length === 0) {
         const admin = {
-            username: "rxz",
-            password: "rxz",
+            username: "user",
+            password: "user",
             firstName: "Elliot",
             lastName: "Alderson",
         };
