@@ -80,11 +80,9 @@ const SignIn = () => {
                             />
                         </div>
 
-                        {errorMsg && (
-                            <div className="error-msg">
-                                <h6>Something went wrong! Please check the inputs</h6>
-                            </div>
-                        )}
+                        <div className="error-msg" data-testid="errorMsg">
+                            {errorMsg && <h6>Something went wrong! Please check the inputs</h6>}
+                        </div>
                         <div className="footer">
                             <button onClick={submit} data-testid="signInBTN">
                                 <p>Sign In</p>

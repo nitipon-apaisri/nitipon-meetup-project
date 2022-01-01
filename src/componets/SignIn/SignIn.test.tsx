@@ -2,9 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { shallow } from "enzyme";
 import { BrowserRouter } from "react-router-dom";
-import { createMemoryHistory } from "history";
 import SignIn from "./SignIn";
-import Home from "../../Pages/Home/Home";
 describe("Sing In test", () => {
     it("Render component without error", () => {
         shallow(
@@ -38,14 +36,8 @@ describe("Sing In test", () => {
         userEvent.type(usernameInput, "user");
         userEvent.type(passwordInput, "user");
         userEvent.click(screen.getByTestId("signInBTN"));
-        const history = createMemoryHistory();
-        history.push("/");
-        render(
-            <BrowserRouter>
-                <Home />
-            </BrowserRouter>
-        );
-        expect(screen.getByText(/dive in! There are so many things to do on meetup/i)).toBeInTheDocument();
+        const errorMsg = screen.queryByText("Something went wrong! Please check the inputs");
+        expect(errorMsg).not.toBeInTheDocument();
     });
     it("Test error message when any input is empty or username/password is wrong", () => {
         render(
