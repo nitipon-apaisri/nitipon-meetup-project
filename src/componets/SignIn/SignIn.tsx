@@ -8,17 +8,16 @@ const SignIn = () => {
     const [username, setUsername] = useState("");
     const [password, setPasswprd] = useState("");
     const [errorMsg, setErrorMsg] = useState(false);
-    const [wrongInputs, setWrongInput] = useState(false);
     const navigate = useNavigate();
     const submit = () => {
         if (username === "" || password === "") {
             setErrorMsg(true);
-        } else {
+        }
+        if (username !== "" && password !== "") {
             users.find((r) => {
                 if (r.username === username && r.password === password) {
                     authContext.singIn(username, password, r.userInfo.firstName, r.userInfo.lastName);
                     setErrorMsg(false);
-                    setWrongInput(false);
                     sessionStorage.setItem(
                         "auth",
                         JSON.stringify({
@@ -33,7 +32,6 @@ const SignIn = () => {
                     navigate("/");
                 } else {
                     setErrorMsg(true);
-                    setWrongInput(true);
                 }
                 return 0;
             });
@@ -84,7 +82,7 @@ const SignIn = () => {
 
                         {errorMsg && (
                             <div className="error-msg">
-                                {wrongInputs ? <h6>Username or password is wrong</h6> : <h6>Please fill the inputs</h6>}
+                                <h6>Something went wrong! Please check the inputs</h6>
                             </div>
                         )}
                         <div className="footer">
