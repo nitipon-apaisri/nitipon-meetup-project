@@ -119,20 +119,22 @@ const EventPage = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="feedback">
+                <hr />
+                <div className="feedback">
                     <h4>Feedback</h4>
                     <div className="feedback-list">
                         <ul aria-label="feedback">
                             {eventsDB[eventIndex].feedback.map((item, index) => {
                                 return (
                                     <li className="item" key={index}>
-                                        <p>{item}</p>
+                                        <p>{item.user}</p>
+                                        <p>{item.comment}</p>
                                     </li>
                                 );
                             })}
                         </ul>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     );

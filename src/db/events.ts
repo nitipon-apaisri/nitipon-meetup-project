@@ -6,7 +6,7 @@ export interface eventModel {
     interested: string[],
     location: Address,
     rate: number,
-    feedback: string[],
+    feedback: Comment[],
     imgCover: string
     date: DateNTime
 }
@@ -19,6 +19,11 @@ interface Address {
     street: string,
     city: string,
     country: string
+}
+
+interface Comment {
+    user: string,
+    comment: string
 }
 
 export const eventsDB: eventModel[]= [
@@ -36,7 +41,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: ["Nice","Nice","Nice","Nice","Nice",],
+        feedback: [{user: "Momoshiki A", comment: "It was a good"}],
         date: {
             dateInfo:"2021/07/06",
             time: "13:00"
@@ -57,7 +62,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 2.5,
-        feedback: ["Nice","Nice","Nice",],
+        feedback: [{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/08",
             time: "13:00"
@@ -78,7 +83,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: ["Nice","Nice","Nice","Nice",],
+        feedback: [{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/10",
             time: "13:00"
