@@ -122,6 +122,9 @@ const EventPage = () => {
                 <hr />
                 <div className="feedback">
                     <h4>Feedback</h4>
+                    <div className="feedback-input">
+                        <textarea name="feedback"></textarea>
+                    </div>
                     <div className="feedback-list">
                         <ul aria-label="feedback">
                             {eventsDB[eventIndex].feedback.map((item, index) => {
