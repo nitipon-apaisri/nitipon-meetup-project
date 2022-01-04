@@ -440,6 +440,62 @@
   background-color: #6968ac;
   color: white;
 }
+.event-container .event-wrapper .feedback {
+  margin: 32px 0;
+}
+.event-container .event-wrapper .feedback button {
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid #eb445d;
+  background-color: #eb445d;
+}
+.event-container .event-wrapper .feedback button p {
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: white;
+}
+.event-container .event-wrapper .feedback .feedback-input {
+  text-align: right;
+}
+.event-container .event-wrapper .feedback .feedback-input textarea {
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #f3f3f3;
+  background-color: #f9f9f9;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 0.05rem;
+  margin-bottom: 16px;
+}
+.event-container .event-wrapper .feedback .feedback-hr hr {
+  width: 50%;
+  margin: 40px auto;
+}
+.event-container .event-wrapper .feedback .feedback-list ul {
+  box-sizing: border-box;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 24px;
+}
+.event-container .event-wrapper .feedback .feedback-list ul li {
+  list-style: none;
+  border: 1px solid #f9f9f9;
+  box-sizing: border-box;
+  padding: 24px;
+  height: 160px;
+  max-height: 160px;
+}
+.event-container .event-wrapper .feedback .feedback-list ul li .user {
+  text-transform: uppercase;
+}
+.event-container .event-wrapper .feedback .feedback-list ul li .comment {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #6d6d6d;
+}
 
 h1, h2, h3, h4, h5, h6, p, a, label {
   margin: 0;

@@ -13,8 +13,6 @@ const EventPage = () => {
     const authContext = useContext(AuthContext);
     const navigate = useNavigate();
     const eventId = useParams();
-    const [join, setJoin] = useState(false);
-    const [userIndex, setUserIndex] = useState(Number);
     const calendraDays = <FontAwesomeIcon icon={faCalendarDays} />;
     const clock = <FontAwesomeIcon icon={faClock} />;
     const locationPin = <FontAwesomeIcon icon={faLocationPin} />;
@@ -22,6 +20,10 @@ const EventPage = () => {
         return r.id === eventId.id;
     });
 
+    //State
+    const [join, setJoin] = useState(false);
+    const [userIndex, setUserIndex] = useState(Number);
+    const [feedback, setFeedback] = useState("");
     //Functions
     const submitToTheEvent = () => {
         if (authContext.auth) {
@@ -121,17 +123,28 @@ const EventPage = () => {
                 </div>
                 <hr />
                 <div className="feedback">
-                    <h4>Feedback</h4>
                     <div className="feedback-input">
-                        <textarea name="feedback"></textarea>
+                        <textarea
+                            name="feedback"
+                            value={feedback}
+                            onChange={(e) => setFeedback(e.target.value)}
+                            rows={5}
+                        ></textarea>
+                        <button>
+                            <p>SEND</p>
+                        </button>
                     </div>
+                    <span className="feedback-hr">
+                        <hr />
+                    </span>
                     <div className="feedback-list">
                         <ul aria-label="feedback">
                             {eventsDB[eventIndex].feedback.map((item, index) => {
                                 return (
-                                    <li className="item" key={index}>
-                                        <p>{item.user}</p>
-                                        <p>{item.comment}</p>
+                                    <li className="item card" key={index}>
+                                        <h4 className="user">{item.user}</h4>
+                                        <hr />
+                                        <p className="comment">{item.comment}</p>
                                     </li>
                                 );
                             })}

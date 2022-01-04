@@ -41,7 +41,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good"}],
+        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/06",
             time: "13:00"
@@ -62,7 +62,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 2.5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good event"}],
+        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/08",
             time: "13:00"
@@ -83,7 +83,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good event"}],
+        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/10",
             time: "13:00"
