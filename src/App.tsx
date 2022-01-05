@@ -40,6 +40,19 @@ function App() {
                 sessionStorage.removeItem("auth");
                 window.location.reload();
             }
+        } else if (sessionStorage.auth) {
+            const founderUser = JSON.parse(sessionStorage.auth).user;
+            const validateUser = users.findIndex((r) => {
+                return r.username === founderUser.username;
+            });
+            if (validateUser !== -1) {
+                authContext.singIn(
+                    founderUser.username,
+                    founderUser.password,
+                    founderUser.firstName,
+                    founderUser.lastName
+                );
+            }
         }
         // eslint-disable-next-line
     }, []);

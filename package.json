@@ -19,6 +19,7 @@
     "react-router": "^6.1.1",
     "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
+    "spinthatshit": "^1.0.4",
     "typescript": "^4.5.3",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"

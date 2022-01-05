@@ -24,7 +24,7 @@ const EventPage = () => {
     const [join, setJoin] = useState(false);
     const [userIndex, setUserIndex] = useState(Number);
     const [comment, setComment] = useState("");
-
+    const [loader, setLoader] = useState(false);
     //Functions
     const submitToTheEvent = () => {
         if (authContext.auth) {
@@ -38,9 +38,14 @@ const EventPage = () => {
     };
 
     const submitComment = () => {
+        setLoader(true);
         addACommentToTheEvent(eventIndex, authContext.user.authUsername, comment);
+        setComment("");
+        setTimeout(() => {
+            setLoader(false);
+        }, 1000);
     };
-    //Hook
+    //Hooks
     useEffect(() => {
         if (authContext.auth) {
             const validateUser = users.findIndex((r) => {
@@ -60,6 +65,19 @@ const EventPage = () => {
                 });
             } else {
                 navigate("/");
+            }
+        } else if (sessionStorage.auth) {
+            const founderUser = JSON.parse(sessionStorage.auth).user;
+            const validateUser = users.findIndex((r) => {
+                return r.username === founderUser.username;
+            });
+            if (validateUser !== -1) {
+                authContext.singIn(
+                    founderUser.username,
+                    founderUser.password,
+                    founderUser.firstName,
+                    founderUser.lastName
+                );
             }
         }
     }, [authContext, userIndex, join, eventIndex, navigate]);
@@ -145,19 +163,26 @@ const EventPage = () => {
                             </span>
                         </div>
                     )}
-                    <div className="feedback-list">
-                        <ul aria-label="feedback">
-                            {eventsDB[eventIndex].comments.map((item, index) => {
-                                return (
-                                    <li className="item card" key={index}>
-                                        <h4 className="user">{item.user}</h4>
-                                        <hr />
-                                        <p className="comment">{item.comment}</p>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
+                    {loader && (
+                        <div className="wait">
+                            <div className="loader"></div>
+                        </div>
+                    )}
+                    {!loader && (
+                        <div className="feedback-list">
+                            <ul aria-label="feedback">
+                                {eventsDB[eventIndex].comments.map((item, index) => {
+                                    return (
+                                        <li className="item card" key={index}>
+                                            <h4 className="user">{item.user}</h4>
+                                            <hr />
+                                            <p className="comment">{item.comment}</p>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

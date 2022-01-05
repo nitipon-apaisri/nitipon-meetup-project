@@ -1,3 +1,4 @@
+@import "../../node_modules/spinthatshit/src/loaders.scss";
 .event-container {
     .event-wrapper {
         margin-top: 80px;
@@ -205,6 +206,17 @@
                     margin: 40px auto;
                 }
             }
+            .wait {
+                box-sizing: border-box;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 104px;
+                align-items: center;
+                .loader {
+                    @include loader05;
+                }
+            }
             .feedback-list {
                 ul {
                     box-sizing: border-box;
@@ -212,6 +224,7 @@
                     display: grid;
                     grid-template-columns: auto auto auto;
                     column-gap: 24px;
+                    row-gap: 24px;
                     li {
                         list-style: none;
                         border: 1px solid #f9f9f9;
