@@ -530,6 +530,7 @@
   max-height: 160px;
 }
 .event-container .event-wrapper .feedback .feedback-list ul li .user {
+  letter-spacing: 0.025rem;
   text-transform: uppercase;
 }
 .event-container .event-wrapper .feedback .feedback-list ul li .comment {

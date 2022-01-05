@@ -38,8 +38,9 @@ const EventPage = () => {
     };
 
     const submitComment = () => {
+        const user = `${authContext.user.firstName} ${authContext.user.lastName}`;
         setLoader(true);
-        addACommentToTheEvent(eventIndex, authContext.user.authUsername, comment);
+        addACommentToTheEvent(eventIndex, user, comment);
         setComment("");
         setTimeout(() => {
             setLoader(false);
