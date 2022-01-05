@@ -173,6 +173,14 @@
                     color: white;
                 }
             }
+            button:hover {
+                cursor: pointer;
+                background-color: white;
+                p {
+                    color: #eb445d;
+                }
+                transition-duration: 200ms;
+            }
             .feedback-input {
                 text-align: right;
                 textarea {
@@ -186,6 +194,9 @@
                     font-family: "Rubik", sans-serif;
                     letter-spacing: 0.05rem;
                     margin-bottom: 16px;
+                }
+                textarea:focus {
+                    background-color: #ffffff;
                 }
             }
             .feedback-hr {

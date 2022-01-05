@@ -454,6 +454,14 @@
   font-size: 0.7rem;
   color: white;
 }
+.event-container .event-wrapper .feedback button:hover {
+  cursor: pointer;
+  background-color: white;
+  transition-duration: 200ms;
+}
+.event-container .event-wrapper .feedback button:hover p {
+  color: #eb445d;
+}
 .event-container .event-wrapper .feedback .feedback-input {
   text-align: right;
 }
@@ -468,6 +476,9 @@
   font-family: "Rubik", sans-serif;
   letter-spacing: 0.05rem;
   margin-bottom: 16px;
+}
+.event-container .event-wrapper .feedback .feedback-input textarea:focus {
+  background-color: #ffffff;
 }
 .event-container .event-wrapper .feedback .feedback-hr hr {
   width: 50%;

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import NavigationBar from "../../componets/NavigationBar/NavigationBar";
-import { eventsDB } from "../../db/events";
+import { addACommentToTheEvent, eventsDB } from "../../db/events";
 import { users, joinTheEvent, declineTheEvent } from "../../db/users";
 import { AuthContext } from "../../store/authContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +23,8 @@ const EventPage = () => {
     //State
     const [join, setJoin] = useState(false);
     const [userIndex, setUserIndex] = useState(Number);
-    const [feedback, setFeedback] = useState("");
+    const [comment, setComment] = useState("");
+
     //Functions
     const submitToTheEvent = () => {
         if (authContext.auth) {
@@ -36,6 +37,9 @@ const EventPage = () => {
         setJoin(false);
     };
 
+    const submitComment = () => {
+        addACommentToTheEvent(eventIndex, authContext.user.authUsername, comment);
+    };
     //Hook
     useEffect(() => {
         if (authContext.auth) {
@@ -123,23 +127,27 @@ const EventPage = () => {
                 </div>
                 <hr />
                 <div className="feedback">
-                    <div className="feedback-input">
-                        <textarea
-                            name="feedback"
-                            value={feedback}
-                            onChange={(e) => setFeedback(e.target.value)}
-                            rows={5}
-                        ></textarea>
-                        <button>
-                            <p>SEND</p>
-                        </button>
-                    </div>
-                    <span className="feedback-hr">
-                        <hr />
-                    </span>
+                    {authContext.auth && (
+                        <div>
+                            <div className="feedback-input">
+                                <textarea
+                                    name="feedback"
+                                    value={comment}
+                                    onChange={(e) => setComment(e.target.value)}
+                                    rows={5}
+                                ></textarea>
+                                <button onClick={submitComment}>
+                                    <p>SEND</p>
+                                </button>
+                            </div>
+                            <span className="feedback-hr">
+                                <hr />
+                            </span>
+                        </div>
+                    )}
                     <div className="feedback-list">
                         <ul aria-label="feedback">
-                            {eventsDB[eventIndex].feedback.map((item, index) => {
+                            {eventsDB[eventIndex].comments.map((item, index) => {
                                 return (
                                     <li className="item card" key={index}>
                                         <h4 className="user">{item.user}</h4>

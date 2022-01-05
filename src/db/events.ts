@@ -6,7 +6,7 @@ export interface eventModel {
     interested: string[],
     location: Address,
     rate: number,
-    feedback: Comment[],
+    comments: Comment[],
     imgCover: string
     date: DateNTime
 }
@@ -41,7 +41,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
+        comments: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/06",
             time: "13:00"
@@ -62,7 +62,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 2.5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
+        comments: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/08",
             time: "13:00"
@@ -83,7 +83,7 @@ export const eventsDB: eventModel[]= [
             country: "Japan",
         },
         rate: 5,
-        feedback: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
+        comments: [{user: "Momoshiki A", comment: "It was a good event"},{user: "Momoshiki A", comment: "It was a good event"}],
         date: {
             dateInfo:"2021/07/10",
             time: "13:00"
@@ -91,3 +91,12 @@ export const eventsDB: eventModel[]= [
         imgCover: "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
     }
 ]
+
+
+export const addACommentToTheEvent = (eventIndex:number, user:string, comment:string) => {
+    const commentModel = {
+        user: user,
+        comment: comment
+    }
+    eventsDB[eventIndex].comments.push(commentModel)
+}
