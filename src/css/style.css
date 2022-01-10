@@ -539,8 +539,128 @@
   color: #6d6d6d;
 }
 
+.card {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(230, 230, 230, 0.25);
+  border-radius: 24px;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 40px rgba(221, 221, 221, 0.5);
+  transition-duration: 300ms;
+}
+
+.card-gallery, .card-cover, .medium-info {
+  width: 432px;
+  max-width: 432px;
+  height: 240px;
+  max-height: 240px;
+  text-decoration: none;
+}
+.card-gallery p, .card-cover p, .medium-info p {
+  color: #a9a9a9;
+}
+
+.card-cover {
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+}
+
+.full-pic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  background-position: center;
+  background-size: contain;
+  transition: all 1s;
+}
+
+.short-info {
+  position: absolute;
+  left: 16px;
+  background-color: white;
+  bottom: 16px;
+  width: 400px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 16px;
+}
+.short-info .row-1 {
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.05rem;
+}
+.short-info .row-1 h4 {
+  color: #000000;
+}
+.short-info .row-2 {
+  margin-top: 4px;
+}
+.short-info .row-2 p {
+  font-size: 0.75rem;
+}
+
+.full-pic:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 4px 40px rgba(128, 128, 128, 0.5);
+}
+
+.medium-info {
+  padding: 24px;
+  border: 1px solid #eaeaea;
+}
+.medium-info hr {
+  margin: 16px 0;
+}
+.medium-info .row-1 {
+  display: flex;
+}
+.medium-info .row-1 .card-img {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+.medium-info .row-1 .title-n-join {
+  margin-left: 24px;
+  letter-spacing: 0.05rem;
+}
+.medium-info .row-1 .title-n-join h4 {
+  color: #000000;
+}
+.medium-info .row-1 .title-n-join p {
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+.medium-info .row-2 {
+  margin-top: 4px;
+}
+.medium-info .row-2 .description, .medium-info .row-2 .event-container .event-wrapper .information .side-info .side-info-card, .event-container .event-wrapper .information .side-info .medium-info .row-2 .side-info-card {
+  margin-top: 16px;
+}
+.medium-info .row-2 .description p, .medium-info .row-2 .event-container .event-wrapper .information .side-info .side-info-card p, .event-container .event-wrapper .information .side-info .medium-info .row-2 .side-info-card p {
+  font-weight: 400;
+  color: #6f6f6f;
+  font-size: 0.75rem;
+  letter-spacing: 0.01rem;
+}
+.medium-info .row-2 p {
+  font-size: 0.75rem;
+}
+
 .profile-container .profile-wrapper {
   margin-top: 80px;
+}
+.profile-container .profile-wrapper .gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 32px;
+  row-gap: 24px;
+  margin-top: 24px;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, label {
@@ -688,8 +808,10 @@ body .contents-container .title {
   text-transform: uppercase;
 }
 body .contents-container .gallery {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 32px;
+  row-gap: 24px;
   margin-top: 24px;
 }
 

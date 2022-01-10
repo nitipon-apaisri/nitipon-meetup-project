@@ -64,7 +64,7 @@ function App() {
                 <Route path="/event/:id" element={<EventPage />} />
                 <Route path="/auth" element={<UserAuth />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/profile" element={<ProfileUserPage />} />
+                <Route path="/profile/:id" element={<ProfileUserPage />} />
             </Routes>
         </div>
     );
