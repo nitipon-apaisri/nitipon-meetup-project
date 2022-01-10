@@ -12,6 +12,9 @@ const NavigationBar = () => {
     const toRegister = () => {
         navigate("/register");
     };
+    const toProfile = () => {
+        navigate("/profile");
+    };
     const toggleDropDownMenu = () => {
         setDropDownMenu(!dropDownMenu);
     };
@@ -50,7 +53,7 @@ const NavigationBar = () => {
                                 </h3>
                             </button>
                             <hr />
-                            <button className="profile button">
+                            <button className="profile button" onClick={toProfile}>
                                 <h3>Profile</h3>
                             </button>
                             <hr />

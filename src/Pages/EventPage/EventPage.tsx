@@ -57,13 +57,10 @@ const EventPage = () => {
                     return r.username === authContext.user.authUsername;
                 });
                 setUserIndex(userPosition);
-                users[userIndex].joins.find((r) => {
-                    if (r === eventsDB[eventIndex].title) {
-                        setJoin(true);
-                        console.log("JOINED");
-                    }
-                    return 0;
+                const findUserJoinEvents = users[userIndex].joins.findIndex((r) => {
+                    return r.title === eventsDB[eventIndex].title;
                 });
+                if (findUserJoinEvents !== -1) setJoin(true);
             } else {
                 navigate("/");
             }
