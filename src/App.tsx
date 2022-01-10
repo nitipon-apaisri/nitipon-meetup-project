@@ -7,7 +7,7 @@ import Register from "./Pages/Register/Register";
 import { register, users } from "./db/users";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./store/authContext";
-import Profile from "./componets/profile/Profile";
+import ProfileUserPage from "./Pages/ProfileUser";
 function App() {
     const authContext = useContext(AuthContext);
     if (users.length === 0) {
@@ -64,7 +64,7 @@ function App() {
                 <Route path="/event/:id" element={<EventPage />} />
                 <Route path="/auth" element={<UserAuth />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/profile" element={<ProfileUserPage />} />
             </Routes>
         </div>
     );
