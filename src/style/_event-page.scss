@@ -222,7 +222,7 @@
                     box-sizing: border-box;
                     padding: 0;
                     display: grid;
-                    grid-template-columns: auto auto auto;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
                     column-gap: 24px;
                     row-gap: 24px;
                     li {
