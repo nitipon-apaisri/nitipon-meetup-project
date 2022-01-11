@@ -41,41 +41,46 @@ const Profile = () => {
         <div className="profile-container">
             <NavigationBar />
             <div className="profile-wrapper">
-                <div className="join-list">
-                    <h1>JOINING</h1>
+                <div className="joining-list">
+                    <div className="title">
+                        <h1>JOINING</h1>
+                        <p>
+                            <em>( Sort By Date )</em>
+                        </p>
+                    </div>
                     <hr />
-                </div>
-                <div className="joining-events-list">
-                    <div className="gallery">
-                        {users[userIndex].joins
-                            .sort((a, b) => (a.date.dateInfo > b.date.dateInfo ? 1 : -1))
-                            .slice(0, 3)
-                            .map((event, index) => {
-                                return (
-                                    <Link
-                                        to={`/event/${event.id}`}
-                                        data-testid={`event-${index}`}
-                                        className="card-cover "
-                                        key={index}
-                                    >
-                                        <div
-                                            className="card full-pic"
-                                            style={{
-                                                backgroundImage: `url(${event.imgCover})`,
-                                            }}
-                                        ></div>
-                                        <div className="short-info">
-                                            <div className="row-1">
-                                                <h4>{event.title}</h4>
-                                                <p>{`Join: ${event.join.length}`}</p>
+                    <div className="joining-events-list">
+                        <div className="gallery">
+                            {users[userIndex].joins
+                                .sort((a, b) => (a.date.dateInfo > b.date.dateInfo ? 1 : -1))
+                                .slice(0, 3)
+                                .map((event, index) => {
+                                    return (
+                                        <Link
+                                            to={`/event/${event.id}`}
+                                            data-testid={`event-${index}`}
+                                            className="card-cover "
+                                            key={index}
+                                        >
+                                            <div
+                                                className="card full-pic"
+                                                style={{
+                                                    backgroundImage: `url(${event.imgCover})`,
+                                                }}
+                                            ></div>
+                                            <div className="short-info">
+                                                <div className="row-1">
+                                                    <h4>{event.title}</h4>
+                                                    <p>{`Join: ${event.join.length}`}</p>
+                                                </div>
+                                                <div className="row-2">
+                                                    <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
+                                                </div>
                                             </div>
-                                            <div className="row-2">
-                                                <p>{`${event.date.dateInfo} | @ ${event.date.time} (Local Time)`}</p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                );
-                            })}
+                                        </Link>
+                                    );
+                                })}
+                        </div>
                     </div>
                 </div>
             </div>
