@@ -28,6 +28,7 @@ const NavigationBar = () => {
         authContext.signOut();
         sessionStorage.removeItem("auth");
         setDropDownMenu(false);
+        navigate("/");
     };
     useEffect(() => {
         setAuth(authContext.auth);

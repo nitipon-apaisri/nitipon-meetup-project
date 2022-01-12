@@ -35,6 +35,8 @@ const Profile = () => {
                     founderUser.lastName
                 );
             }
+        } else {
+            navigate("/");
         }
     }, [authContext, userIndex, navigate]);
     return (
