@@ -42,10 +42,26 @@ const NavigationBar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <a href="/">Explore</a>
+                        <Link
+                            to="/"
+                            className="inactive"
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}
+                        >
+                            Explore
+                        </Link>
                     </li>
                     <li>
-                        <a href="/">About</a>
+                        <Link
+                            to="/"
+                            className="inactive"
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}
+                        >
+                            About
+                        </Link>
                     </li>
                 </ul>
             </div>

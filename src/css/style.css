@@ -726,6 +726,10 @@ body nav .routes ul li a {
   font-weight: bolder;
   text-decoration: none;
 }
+body nav .routes ul li a.inactive {
+  color: #dddddd;
+  cursor: not-allowed;
+}
 body nav .user-actions {
   display: flex;
 }

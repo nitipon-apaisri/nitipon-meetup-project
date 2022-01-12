@@ -4,13 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Default Sign In
 
-### Username:
+-   username: user
 
--   user
-
-### Password:
-
--   user
+-   password: user
 
 ## Features
 

@@ -51,6 +51,10 @@ body {
                         font-weight: bolder;
                         text-decoration: none;
                     }
+                    a.inactive {
+                        color: #dddddd;
+                        cursor: not-allowed;
+                    }
                 }
             }
         }
