@@ -2,6 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Default Sign In
+
+### Username:
+
+-   user
+
+### Password:
+
+-   user
+
+## Features
+
+-   Sign In / Sign Up
+
+### Not sign in required:
+
+-   Visit meetups
+
+### Sign in required:
+
+-   Join meetups
+-   Write comments to the meetup
+
 ## User Stories
 
 ### Overview:
