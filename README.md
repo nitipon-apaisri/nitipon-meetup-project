@@ -12,11 +12,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 -   Sign In / Sign Up
 
-### Not sign in required:
+#### Not sign in required:
 
 -   Visit meetups
 
-### Sign in required:
+#### Sign in required:
 
 -   Join meetups
 -   Write comments to the meetup
