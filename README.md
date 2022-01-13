@@ -14,12 +14,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### Not sign in required:
 
--   Visit meetups
+-   View any meetups
 
 #### Sign in required:
 
 -   Join meetups
 -   Write comments to the meetup
+-   View the profile page (By click at user's name button on the navigation bar after signed in)
 
 ## User Stories
 
@@ -39,5 +40,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### Sign In / Sing Up:
 
--   As a user, I would like see an example for every input
--   As a user, I would like to see clearly buttons for sign in, sign up, and cancel button
+-   As a user, I would like see an example for every input.
+-   As a user, I would like to see clearly buttons for sign in, sign up, and cancel button.
+
+#### Profile Page:
+
+-   As a user, I would like see a list for joining events.
